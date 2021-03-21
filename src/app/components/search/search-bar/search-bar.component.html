@@ -1,0 +1,60 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <br>
+            <form [formGroup]="myForm" class="form-inline waves-light" mdbWavesEffect>
+                <div class="md-form mt-0">
+                    <label for="searchby" class="form-label">SearchBy</label>
+                    <br>
+                    <select id="searchby" formControlName="searchby" class="form-select">
+                      <option selected>name</option>
+                      <option>category</option>
+                      <option>brand</option>
+                      <option>highPrice</option>
+                      <option>LowPrice</option>
+                      <option>NewDate</option>
+                      <option>OldDate</option>
+                    </select>
+                    <input class="form-control mr-sm-2" formControlName="body" type="text" placeholder="Search" >
+                    <button type="button" class=" btn btn-light btn-outline-dark" (click)="search(myForm)">Search</button>
+                </div>
+                <hr>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col" *ngFor="let product of prod">
+            <div class="card" style="width: 14rem;"  >
+                <img class="card-img-top"  alt="Bologna">
+                <div class="card-body">
+                    <h4 class="card-title">{{product.name}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>
+                    <div class="card-body text-center">
+                        <!-- <app-rating-events></app-rating-events> -->
+                        <hr>
+                        <h6 class="mb-3">
+                            <span class="text-danger mr-1">{{product.brand}}</span>
+                            <span class="text-grey">{{product.price}}<s></s></span>
+                        </h6>
+
+                        <button type="button" class="btn btn-danger btn-sm mr-1 mb-2">
+                            <button type="button" class="btn btn-danger btn-sm mr-1 mb-2" (click)="addTocart(product._id)">
+                                <i class="fa fa-shopping-cart pr-2"><a  routerlinkactive="text-danger" > Add to cart</a></i>
+                               </button>                        </button>
+                        <button type="button" class="btn btn-light btn-sm mr-1 mb-2">
+                            <i class="fa fa-info-circle pr-2"><a (click)="getSpecificProductById(product._id)" >Details</a></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
