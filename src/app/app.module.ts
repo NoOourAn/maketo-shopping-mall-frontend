@@ -37,10 +37,10 @@ import { OrdersService } from './services/orders.service';
 import { HomeComponent } from './components/home/home.component';
 import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-brief.component';
 import { ShoppingListComponent } from './components/home/2ndsectionShopping/shopping-list.component';
+import { ReviewComponent } from './components/home/4thsectionreview/review.component';
 // import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
 // import { RatingEventsComponent } from './components/home/2ndsectionShopping/rating-events/rating-events.component';
-// import { ReviewComponent } from './components/home/4thsectionreview/review.component';
 // import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-review.component';
 
 @NgModule({
@@ -69,8 +69,8 @@ import { ShoppingListComponent } from './components/home/2ndsectionShopping/shop
     HomeComponent,
     SliderBriefComponent,
     ShoppingListComponent,
+    ReviewComponent,
     // BgReviewComponent,
-    // ReviewComponent,
     // RatingEventsComponent,
     // ReadMoreComponent,
     // BuyNowComponent,
