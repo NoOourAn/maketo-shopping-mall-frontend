@@ -17,8 +17,8 @@ import { SignInComponent } from './components/shared/header/sign-in/sign-in.comp
 // ///////////////////
 // //// import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 // /////// USER ONLY components
-// import {receiptComponent} from './components/orders page/receipt/receipt.component';
-// import { OrdersComponent } from './components/orders page/orders.page.component';
+import {receiptComponent} from './components/orders page/receipt/receipt.component';
+import { OrdersComponent } from './components/orders page/orders.page.component';
 import { ProfileComponent } from './components/profile/profile.component';
 // import { SearchresultComponent } from './components/search/search-bar/searchresult/searchresult.component';
 //// admin components
@@ -35,12 +35,12 @@ const routes = [
   { path:'login',component:SignInComponent },
   { path:'registration',component:RegistrationComponent },
   // {path:'signin', component:SignInComponent},
-  // {path:'receipt', component:receiptComponent,canActivate: [AuthGuard] },
+  {path:'receipt', component:receiptComponent },
   // { path:'search', component:SearchBarComponent },
   // { path: 'home', component: HomeComponent},
   // { path: 'blog', component: BlogComponent },
   // // { path: 'readmore', component: ReadMoreComponent },
-  // { path: 'orders', component: OrdersComponent },
+  { path: 'orders', component: OrdersComponent },
   { path: 'profile', component: ProfileComponent },//canActivate: [AuthGuard]
   // { path: 'buynow', component: BuyNowComponent },
   // { path: 'searchresult', component: SearchresultComponent },

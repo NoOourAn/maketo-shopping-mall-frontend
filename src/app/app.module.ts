@@ -16,10 +16,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 // import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-brief.component';
 // import { ReviewComponent } from './components/home/4thsectionreview/review.component';
 import { SignInComponent } from './components/shared/header/sign-in/sign-in.component';
-// import { OrdersComponent } from './components/orders page/orders.page.component';
+import { OrdersComponent } from './components/orders page/orders.page.component';
 import { CreateProductComponent } from './components/dashboard/create-product/create-product.component';
 import { ProfileComponent } from './components/profile/profile.component';
-// import { receiptComponent } from './components/orders page/receipt/receipt.component';
+import { receiptComponent } from './components/orders page/receipt/receipt.component';
 import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
 // import { RatingEventsComponent } from './components/home/2ndsectionShopping/rating-events/rating-events.component';
 // import { BlogComponent } from './components/shared/header/blog/blog.component';
@@ -31,7 +31,7 @@ import { JwtService } from './services/jwt.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { AboutUsComponent } from './components/shared/header/about-us/about-us.component';
 // import { SearchresultComponent } from './components/search/search-bar/searchresult/searchresult.component';
-// import { OrdereditemComponent } from './components/orders page/ordereditem/ordereditem.component';
+import { OrdereditemComponent } from './components/orders page/ordereditem/ordereditem.component';
 // import { CartComponent } from './components/shared/header/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { AdminControlsComponent } from './components/dashboard/admin-controls/admin-controls.component';
@@ -55,15 +55,15 @@ import { OrdersService } from './services/orders.service';
     // ReviewComponent,
     CreateProductComponent,
     ProfileComponent,
-    // receiptComponent,
+    receiptComponent,
     EditProductComponent,
     // RatingEventsComponent,
-    // OrdersComponent,
+    OrdersComponent,
     // ReadMoreComponent,
     // HomeComponent,
     // BuyNowComponent,
     // SearchresultComponent,
-    // OrdereditemComponent,
+    OrdereditemComponent,
     RegistrationComponent,
     // BlogComponent,
     SignInComponent,
