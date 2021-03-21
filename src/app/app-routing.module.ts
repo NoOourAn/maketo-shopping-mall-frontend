@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 /////// USER or GUEST components
 // import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
-// import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 // import { SearchBarComponent } from './components/search/search-bar/search-bar.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
 // //////header components
@@ -19,7 +19,7 @@ import { SignInComponent } from './components/shared/header/sign-in/sign-in.comp
 // /////// USER ONLY components
 // import {receiptComponent} from './components/orders page/receipt/receipt.component';
 // import { OrdersComponent } from './components/orders page/orders.page.component';
-// import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 // import { SearchresultComponent } from './components/search/search-bar/searchresult/searchresult.component';
 //// admin components
 import { CreateProductComponent } from './components/dashboard/create-product/create-product.component';
@@ -41,11 +41,11 @@ const routes = [
   // { path: 'blog', component: BlogComponent },
   // // { path: 'readmore', component: ReadMoreComponent },
   // { path: 'orders', component: OrdersComponent },
-  // { path: 'profile', component: ProfileComponent,canActivate: [AuthGuard]},//canActivate: [AuthGuard]
+  { path: 'profile', component: ProfileComponent },//canActivate: [AuthGuard]
   // { path: 'buynow', component: BuyNowComponent },
   // { path: 'searchresult', component: SearchresultComponent },
   // { path: 'aboutus', component: AboutUsComponent },
-  // { path: 'products/:id', component:ProductdetailsComponent },
+  { path: 'products/:id', component:ProductdetailsComponent },
   // { path: 'orders', component: CartComponent }, 
 
   // ///Admin Components

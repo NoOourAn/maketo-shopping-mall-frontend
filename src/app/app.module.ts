@@ -18,7 +18,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SignInComponent } from './components/shared/header/sign-in/sign-in.component';
 // import { OrdersComponent } from './components/orders page/orders.page.component';
 import { CreateProductComponent } from './components/dashboard/create-product/create-product.component';
-// import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
 // import { receiptComponent } from './components/orders page/receipt/receipt.component';
 import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
 // import { RatingEventsComponent } from './components/home/2ndsectionShopping/rating-events/rating-events.component';
@@ -38,7 +38,7 @@ import { AdminControlsComponent } from './components/dashboard/admin-controls/ad
 import { AdminDisplayComponent } from './components/dashboard/admin-display/admin-display.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { AdminService } from './services/admin.service';
-// import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 // import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { LoginService } from './services/login.service';
 import { OrdersService } from './services/orders.service';
@@ -54,7 +54,7 @@ import { OrdersService } from './services/orders.service';
     // SliderBriefComponent,
     // ReviewComponent,
     CreateProductComponent,
-    // ProfileComponent,
+    ProfileComponent,
     // receiptComponent,
     EditProductComponent,
     // RatingEventsComponent,
@@ -73,7 +73,7 @@ import { OrdersService } from './services/orders.service';
     AdminControlsComponent,
     AdminDisplayComponent,
     DashboardComponent,
-    // ProductdetailsComponent,
+    ProductdetailsComponent,
     // EditProfileComponent,
   ],
   imports: [
