@@ -45,7 +45,6 @@ const routes = [
   /////elly 3aml errororor -_-
   {path:'', component: HomeComponent },
   // { path: 'home', component: HomeComponent},
-  // {path:'signin', component:SignInComponent},
 
   // ///Admin Components
   // { path: 'editproduct', component: EditProductComponent ,canActivate: [AuthGuard,AdminGuard]},

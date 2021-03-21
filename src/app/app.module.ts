@@ -38,7 +38,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-brief.component';
 import { ShoppingListComponent } from './components/home/2ndsectionShopping/shopping-list.component';
 import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-review.component';
-// import { RatingEventsComponent } from './components/home/2ndsectionShopping/rating-events/rating-events.component';
+import { RatingEventsComponent } from './components/home/4thsectionRatingEvents/rating-events.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +67,7 @@ import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-rev
     SliderBriefComponent,
     ShoppingListComponent,
     BgReviewComponent,
-    // RatingEventsComponent,
+    RatingEventsComponent,
   ],
   imports: [
     BrowserModule,
