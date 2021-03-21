@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductsService } from './services/products.service';
 import { HttpClientModule } from "@angular/common/http";
-// import { SearchBarComponent } from './components/search/search-bar/search-bar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ProductsComponent } from './components/products/products.component';
 import { RegistrationComponent } from './components/shared/header/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +30,6 @@ import { AuthService } from './services/auth.service';
 import { JwtService } from './services/jwt.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { AboutUsComponent } from './components/shared/header/about-us/about-us.component';
-// import { SearchresultComponent } from './components/search/search-bar/searchresult/searchresult.component';
 import { OrdereditemComponent } from './components/orders page/ordereditem/ordereditem.component';
 // import { CartComponent } from './components/shared/header/cart/cart.component';
 import { CartService } from './services/cart.service';
@@ -46,7 +45,7 @@ import { OrdersService } from './services/orders.service';
 @NgModule({
   declarations: [
     AppComponent,
-    // SearchBarComponent,
+    SearchBarComponent,
     ProductsComponent,
     // BgReviewComponent,
     // FooterComponent,
@@ -62,7 +61,6 @@ import { OrdersService } from './services/orders.service';
     // ReadMoreComponent,
     // HomeComponent,
     // BuyNowComponent,
-    // SearchresultComponent,
     OrdereditemComponent,
     RegistrationComponent,
     // BlogComponent,

@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 // import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
-// import { SearchBarComponent } from './components/search/search-bar/search-bar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
 // //////header components
 import { RegistrationComponent } from './components/shared/header/registration/registration.component';
@@ -20,7 +20,6 @@ import { SignInComponent } from './components/shared/header/sign-in/sign-in.comp
 import {receiptComponent} from './components/orders page/receipt/receipt.component';
 import { OrdersComponent } from './components/orders page/orders.page.component';
 import { ProfileComponent } from './components/profile/profile.component';
-// import { SearchresultComponent } from './components/search/search-bar/searchresult/searchresult.component';
 //// admin components
 import { CreateProductComponent } from './components/dashboard/create-product/create-product.component';
 import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
@@ -36,14 +35,13 @@ const routes = [
   { path:'registration',component:RegistrationComponent },
   // {path:'signin', component:SignInComponent},
   {path:'receipt', component:receiptComponent },
-  // { path:'search', component:SearchBarComponent },
+  { path:'search', component:SearchBarComponent },
   // { path: 'home', component: HomeComponent},
   // { path: 'blog', component: BlogComponent },
   // // { path: 'readmore', component: ReadMoreComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'profile', component: ProfileComponent },//canActivate: [AuthGuard]
   // { path: 'buynow', component: BuyNowComponent },
-  // { path: 'searchresult', component: SearchresultComponent },
   // { path: 'aboutus', component: AboutUsComponent },
   { path: 'products/:id', component:ProductdetailsComponent },
   // { path: 'orders', component: CartComponent }, 
