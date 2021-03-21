@@ -8,7 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 // import { RegistrationComponent } from './components/shared/header/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+// import { MDBBootstrapModule } from 'angular-bootstrap-md';
 // import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-review.component';
 // import { FooterComponent } from './components/shared/footer/footer.component';
 // import { HeaderComponent } from './components/shared/header/header.component';
@@ -82,7 +82,7 @@ import { OrdersService } from './services/orders.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MDBBootstrapModule,
+    // MDBBootstrapModule,
     // MDBBootstrapModule.forRoot(),
     NgbModule
   ],
