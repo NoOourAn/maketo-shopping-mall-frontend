@@ -32,7 +32,7 @@ import { AdminGuard } from './guards/admin.guard';
 const routes = [
   {path:'products',component:ProductsComponent },
   { path:'login',component:SignInComponent },
-  { path:'registration',component:RegistrationComponent },
+  { path:'register',component:RegistrationComponent },
   {path:'receipt', component:receiptComponent },
   { path:'search', component:SearchBarComponent },
   { path: 'orders', component: OrdersComponent },
