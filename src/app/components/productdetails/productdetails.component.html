@@ -1,4 +1,5 @@
 <!--Section: Block Content-->
+<app-header></app-header>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -13,34 +14,15 @@
                         <div id="mdb-lightbox-ui"></div>
 
                         <div class="mdb-lightbox">
-
                             <div class="row product-gallery mx-1">
-
-                                <div class="col-12 mb-0">
+                                <div *ngIf="product.imgUrl" class="col-12 mb-0">
                                     <figure class="view overlay rounded z-depth-1 main-img">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg" data-size="710x823">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg" class="img-fluid z-depth-1">
-                                        </a>
-                                    </figure>
-                                    <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" data-size="710x823">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" class="img-fluid z-depth-1">
-                                        </a>
-                                    </figure>
-                                    <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg" data-size="710x823">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg" class="img-fluid z-depth-1">
-                                        </a>
-                                    </figure>
-                                    <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg" data-size="710x823">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg" class="img-fluid z-depth-1">
+                                        <a [href]="product.imgUrl" data-size="710x823">
+                                            <img *ngIf="product.imgUrl" class="img-fluid z-depth-1" alt="Bologna" [src]="product.imgUrl">
                                         </a>
                                     </figure>
                                 </div>
-
                             </div>
-
                         </div>
 
                     </div>
@@ -102,3 +84,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

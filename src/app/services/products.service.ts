@@ -106,7 +106,7 @@ export class ProductsService {
     console.log(product)
     var formData = new FormData()
     formData.append('file',image);
-    formData.append('name',product.name);
+    formData.append('name',product.productName);
     formData.append('brand',product.brand);
     formData.append('category',product.category);
     formData.append('numberInStock',product.numInStock);
