@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductdetailsComponent implements OnInit {
 
-  constructor( public productSercice:ProductsService, private myActivatedRoute:ActivatedRoute ,) { }
+  constructor( public productSercice:ProductsService, private myActivatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
 this.getSpecificProductById(this.myActivatedRoute.snapshot.params.id)  }

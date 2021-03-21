@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { ProductsService } from '../../../services/products.service';
+import { ActivatedRoute } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,18 +14,9 @@ import {HttpClient} from '@angular/common/http'
 export class EditProductComponent implements OnInit {
 
   
-  constructor(private myClient:HttpClient) { }
+  constructor(public productSercice:ProductsService, private myActivatedRoute:ActivatedRoute) { }
   
-  updateProduct(id,product){
-    return this.myClient.put(`https://jsonplaceholder.typicode.com/posts/${id}`,product)
-  }
-  
-  editProduct(id,edit){
-    return this.myClient.patch(`https://jsonplaceholder.typicode.com/posts/${id}`,edit)
-  }
-  deleteProduct(id){
-    return this.myClient.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  }
+
   ngOnInit(): void {
   }
 }
