@@ -1,0 +1,43 @@
+<div class="container-block">
+    <div class="main-block">
+        <h1>Login</h1>
+
+        <span *ngIf="errorMsg">
+            <ngb-alert type="danger" [dismissible]="false">
+                {{errorMsg}}
+            </ngb-alert>
+        </span>
+
+        <form [formGroup]="LoginForm">
+        <br>
+
+        <!-- username input -->
+        <label id="icon" for="username"><fa-icon [icon]="faUser"></fa-icon></label>
+        <input type="text" formControlName="username" name="username" id="username" placeholder="Username" required/>
+        <!-- username error handling (interactive) and (on submit)  -->
+        <div *ngIf="(LoginForm.controls.username.errors && LoginForm.controls.username.touched) || (usernameError && !LoginForm.controls.username.touched)">
+            <div *ngIf="LoginForm.controls.username.errors.required" class="text-light my-2" role="alert">
+                * this field is required !
+            </div>
+        </div>
+        
+        
+        <!-- password input -->
+        <label id="icon" for="password"><fa-icon [icon]="faLock"></fa-icon></label>
+        <input type="password" formControlName="password" name="password" id="password" placeholder="Password" required/>
+        <!-- password error handling (interactive) and (on submit) -->
+        <div *ngIf="(LoginForm.controls.password.errors && LoginForm.controls.password.touched) || (passwordError && !LoginForm.controls.password.touched)">
+            <div *ngIf="LoginForm.controls.password.errors.required" class="text-light my-2" role="alert">
+                * this field is required !
+            </div>
+        </div>
+
+        <hr>
+        
+        <div class="btn-block">
+            <p>Don't have an account? <a routerLink="">Sign Up</a>.</p>
+            <button type="submit" (click)="login()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

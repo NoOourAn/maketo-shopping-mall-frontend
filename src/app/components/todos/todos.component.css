@@ -1,0 +1,44 @@
+h1{
+    font-size: 45px;
+    font-weight: 500;
+}
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+button.btn{
+    background-color: #ad264a;
+    color: #2E2E2E;
+    border: none;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.3); 
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+button.btn:hover{
+    /* color: #FE792A; */
+    background-color: #282224;
+}
+.hover-hightlight:hover {
+    cursor: pointer;
+    stroke: white;
+    stroke-width: 5px;
+    /* box-shadow: 0px 0px 10px black; */
+    box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.3); 
+
+}
+.modal-header.btn{
+    width: 50px;
+}
+button.close{
+    width: 10%;
+}
+button.save{
+    width: 30%;
+}
+select{
+    width: 45%;
+}
+
+
+

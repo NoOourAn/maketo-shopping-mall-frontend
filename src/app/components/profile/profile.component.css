@@ -1,0 +1,49 @@
+.bg-block, .filter-block {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    color: #666;
+}
+
+.bg-block {
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    background: url("/assets/bg5.jpg") no-repeat center;
+    background-size: cover;
+    height: auto;
+    min-height: 100vh;
+}   
+
+.filter-block{
+    padding: 0px 35px;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+button.btn{
+    background-color: #ad264a;
+    color: #2E2E2E;
+    border: none;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.3); 
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 0;
+    margin: 10px auto;
+    width: 100px;
+}
+button.btn:hover{
+    background-color: #282224;
+}
+
+
+    
+   
+    
+   
+   
+   
+  
