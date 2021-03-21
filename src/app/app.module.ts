@@ -36,10 +36,10 @@ import { OrdersService } from './services/orders.service';
 ////////// ellly 3amlllll error -_-
 import { HomeComponent } from './components/home/home.component';
 import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-brief.component';
+import { ShoppingListComponent } from './components/home/2ndsectionShopping/shopping-list.component';
 // import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
 // import { RatingEventsComponent } from './components/home/2ndsectionShopping/rating-events/rating-events.component';
-// import { ShoppingListComponent } from './components/home/2ndsectionShopping/shopping-list.component';
 // import { ReviewComponent } from './components/home/4thsectionreview/review.component';
 // import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-review.component';
 
@@ -68,8 +68,8 @@ import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-
     ////////elly 3aml error -_-
     HomeComponent,
     SliderBriefComponent,
+    ShoppingListComponent,
     // BgReviewComponent,
-    // ShoppingListComponent,
     // ReviewComponent,
     // RatingEventsComponent,
     // ReadMoreComponent,

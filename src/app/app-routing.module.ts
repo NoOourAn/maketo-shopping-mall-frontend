@@ -46,8 +46,8 @@ const routes = [
    
   /////elly 3aml errororor -_-
   {path:'', component: HomeComponent },
-  // {path:'signin', component:SignInComponent},
   // { path: 'home', component: HomeComponent},
+  // {path:'signin', component:SignInComponent},
   // // { path: 'readmore', component: ReadMoreComponent },
   // { path: 'buynow', component: BuyNowComponent },
 
