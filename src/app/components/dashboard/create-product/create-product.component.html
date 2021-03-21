@@ -1,0 +1,154 @@
+<form [formGroup]="CreateProductForm" class="border border-light p-5" enctype="multipart/form-data">
+
+  <div class="container register-form">
+      <div class="form">
+          <div class="note">
+              <p>Create Product</p>
+          </div>
+          <div class="form-content">
+              <div class="form-row">
+                 <!-- error msg if creating failed -->
+                  <div *ngIf="errorMsg" class="alert alert-danger my-2" role="alert">
+                    {{errorMsg}}
+                  </div>
+                  <div class="col-md-6">
+
+                    <!-- ////////////////////////////// -->
+                      <!-- product name -->
+                      <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" formControlName="productName" id="productName">
+                        <!-- name error handling (interactive)  -->
+                        <div *ngIf="CreateProductForm.controls.productName.errors && CreateProductForm.controls.productName.touched">
+                          <div *ngIf="CreateProductForm.controls.productName.errors.required">
+                              this field is required!
+                          </div>
+                          <div *ngIf="CreateProductForm.controls.productName.errors.maxlength">
+                              title should be less than 100 letters.
+                          </div>
+                          <div *ngIf="CreateProductForm.controls.productName.errors.minlength">
+                            title should be Atleast 1 letter.
+                        </div>
+                        </div>
+                      </div>
+
+                       <!-- //////////////////////// -->
+                      <!-- product description -->
+                      <div class="form-group">
+                        <label for="desc">Product Description</label>
+                        <input type="text" formControlName="desc" id="desc">
+                        <!-- description error handling (interactive)  -->
+                        <div *ngIf="CreateProductForm.controls.desc.errors && CreateProductForm.controls.desc.touched">
+                          <div *ngIf="CreateProductForm.controls.desc.errors.maxlength">
+                            description should be less than 500 letters.
+                          </div>
+                          <div *ngIf="CreateProductForm.controls.desc.errors.minlength">
+                            description should be Atleast 1 letter.
+                          </div>
+                        </div>
+                      </div>
+
+                        <!-- //////////////////////// -->
+                        <!-- product category -->
+                        <div class="form-group">
+                        <label for="category">Product Category</label>
+                        <input type="text" formControlName="category" id="category">
+                        <!-- category error handling (interactive)  -->
+                        <div *ngIf="CreateProductForm.controls.category.errors && CreateProductForm.controls.category.touched">
+                         <div *ngIf="CreateProductForm.controls.category.errors.required">
+                           this field is required!
+                         </div>
+                          <div *ngIf="CreateProductForm.controls.category.errors.maxlength">
+                            description should be less than 50 letters.
+                          </div>
+                          <div *ngIf="CreateProductForm.controls.category.errors.minlength">
+                            description should be Atleast 1 letter.
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- ///////////////////////////// -->
+                    <!-- product brand -->
+                    <div class="form-group">
+                      <label for="brand">Product Brand</label>
+                      <input type="text" formControlName="brand" id="brand">
+                      <!-- brand error handling (interactive)  -->
+                      <div *ngIf="CreateProductForm.controls.brand.errors && CreateProductForm.controls.brand.touched">
+                        <div *ngIf="CreateProductForm.controls.brand.errors.required">
+                          this field is required!
+                        </div>
+                        <div *ngIf="CreateProductForm.controls.brand.errors.maxlength">
+                          brand should be less than 50 letters.
+                        </div>
+                        <div *ngIf="CreateProductForm.controls.brand.errors.minlength">
+                          brand should be Atleast 1 letter.
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+
+                  <div class="col-md-6">
+
+                    
+                    <!-- //////////////////////// -->
+                    <!-- product numInStock -->
+                    <div class="form-group">
+                      <label for="numInStock">Product Stock</label>
+                      <input type="number" formControlName="numInStock" id="numInStock">
+                      <!-- numInStock error handling (interactive)  -->
+                      <div *ngIf="CreateProductForm.controls.numInStock.errors && CreateProductForm.controls.numInStock.touched">
+                        <div *ngIf="CreateProductForm.controls.numInStock.errors.required">
+                          this field is required!
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- //////////////////////////// -->
+                    <!-- product price -->
+                    <div class="form-group">
+                      <label for="price">Product Price</label>
+                      <input type="number" formControlName="price" id="price">
+                      <!-- price error handling (interactive)  -->
+                      <div *ngIf="CreateProductForm.controls.price.errors && CreateProductForm.controls.price.touched">
+                        <div *ngIf="CreateProductForm.controls.price.errors.required">
+                          this field is required!
+                        </div>
+                      </div>
+                    </div>
+
+                     <!-- //////////////////////////// -->
+                    <!-- product img -->
+                    <div class="form-group">
+                      <label for="img">Product Image</label>
+                      <!-- i do it manually with fileChange() function cuz ngModel doesn't work with input[type="file"] -->
+                      <input (change)="fileChange($event)" type="file" formControlName="img" name="img" id="img">
+                      <!-- image error handling (interactive)  -->
+                      <div *ngIf="CreateProductForm.controls.img.errors && CreateProductForm.controls.img.touched">
+                        <div *ngIf="CreateProductForm.controls.img.errors.required">
+                          this field is required!
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                  </div>
+                    
+                    
+                </div>
+              </div>
+              <div class="text-right">
+                <button class="btnSubmit" (click)="cancel()" >Cancel</button>
+                <button type="submit" class="btnSubmit" (click)="createProduct()">Create</button>
+              </div>
+          </div>
+      </div>
+
+</form>
+
+
+
+
+ 

@@ -1,0 +1,32 @@
+.main-block{
+    height: 100%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.btn{
+    background-color: #2794B5;
+    color: white;
+    transition: ease-in-out;
+    margin-bottom: 20px;
+}
+.btn:hover{
+    background-color: #1582aa;
+}
+
+
+.form-group label{
+    margin-right: 20px;
+}
+
+.form-group select{
+    height: 36px;
+    margin: 10px 0 15px -5px;
+    padding-left: 10px; 
+    border-radius: 5px;
+    border: solid 1px #cbc9c9; 
+    box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+    background: #fff; 
+    outline: none;
+    color: #282224;
+}

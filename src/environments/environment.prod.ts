@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api:'https://todoty-backend.herokuapp.com'
+  api:"https://e-commerce-msm-backend.herokuapp.com"
 };

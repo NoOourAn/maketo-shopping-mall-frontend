@@ -1,0 +1,170 @@
+<div class="main-block" [ngSwitch]="flag"> 
+
+  <div *ngIf="errorMsg" class="alert alert-danger text-center">
+    {{ errorMsg }}
+  </div>
+
+  <div *ngIf="successMsg" class="alert alert-success text-center">
+    {{ successMsg }}
+  </div>
+
+  <!-- products -->
+  <div *ngSwitchCase="0" style="overflow-y:auto">
+    <div *ngIf="products.length>0;else noData">
+      <table class="table table-borderless table-striped table-earning">
+        <thead style="background-color: #2794B5; color: white;">
+        <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Brand</th>
+        <th>Number In Stock</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th></th>
+        <th></th>
+
+        </tr>
+        </thead>
+        <tbody>
+        
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td *ngIf="product.description;else notExist">{{ product.description }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.brand }}</td>
+          <td>{{ product.numberInStock }}</td>
+          <td>{{ product.price }}</td>
+          <td *ngIf="product.imgUrl;else notExist">
+            <a [href]="product.imgUrl">Img</a>
+          </td>
+          <td>
+            <button class="btn" (click)="updateProduct(product._id)">Edit</button>
+          </td>
+          <td>
+            <button class="btn" (click)="deleteProduct(product._id)">Delete</button>
+          </td>
+        </tr>
+    
+        </tbody>
+        </table>
+        <button class="btn btn-primary" routerLink="/createproduct">Add New Product</button>
+    </div>
+  </div>
+
+
+    <!-- orders -->
+    <div *ngSwitchCase="1">
+      <div *ngIf="orders.length>0;else noData">
+
+        <table class="table table-borderless table-striped table-earning">
+          <thead style="background-color: #2794B5; color: white;">
+          <tr>
+          <th>User</th>
+          <th>Placed Date</th>
+          <th>Total Price</th>
+          <th>Status</th>
+          <th>Products</th>
+          <th></th>
+          <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          
+          <tr *ngFor="let order of orders">
+            <td>{{ order.user }}</td>
+            <td>{{ order.PlacedDate }}</td>
+            <td>{{ order.totalPrice }}</td>
+            <td>{{ order.status }}</td>
+            <td>
+              <p *ngFor="let product of order.products">
+                {{ product.productName }} X {{ product.quantity }}
+              </p>
+            </td>
+            <td>
+              <button class="btn" (click)="openEditStatusModal(changeStatus,order._id)">Edit</button>
+            </td>
+            <td>
+              <button class="btn" (click)="deleteOrder(order._id)">Delete</button>
+            </td>
+          </tr>
+      
+          </tbody>
+          </table>
+      </div>
+    </div>
+
+      <!-- users -->
+      <div *ngSwitchCase="2">
+        <div *ngIf="users.length>0;else noData">
+
+          <table class="table table-borderless table-striped table-earning">
+            <thead style="background-color: #2794B5; color: white;">
+            <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <!-- <th>Image</th> -->
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.username }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.createdAt }}</td>
+              <!-- <td *ngIf="user.imgUrl;else notExist">
+                <a [href]="user.imgUrl">Img</a>
+              </td> -->
+            </tr>
+            </tbody>
+            </table>
+        </div>
+      </div>
+
+        <div *ngSwitchCase="-1">
+          <div class="alert alert-success text-center">
+            Welcome to Dashboard
+          </div>
+        </div>
+
+</div>
+
+<ng-template #notExist>
+  <td> ----- </td>
+</ng-template>  
+
+
+<ng-template #noData>
+  <div class="alert alert-danger text-center">
+    No Data available
+  </div>
+</ng-template>  
+
+<!-- Change Order Status   -->
+<ng-template #changeStatus let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Update Status</h4>
+    <button class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
+  </div>
+  <form [formGroup]="ChangeStatusForm">
+    <div class="modal-body">
+        <div class="form-group">
+            <!-- product change status -->
+            <label for="status">Choose Order Status:</label>
+            <select class="form-select" formControlName="status" name="status">
+                <option  disabled>Choose Order Status</option>
+                <option  value="pending" selected>Pending</option>
+                <option  value="rejected">Rejected</option>
+                <option  value="accepted">Accepted</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn" (click)="modal.close()">Change</button>
+    </div>
+  </form>
+
+</ng-template>

@@ -1,0 +1,12 @@
+.controls-block{
+    width: 25%;
+    background-color: #2794B5;
+    color: white;
+    height: 100vh;
+}
+
+.display-block{
+    width: 75%;
+    background-color: white;
+    height: 100vh;
+}
