@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 /////// USER or GUEST components
-// import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+
+////ellly 3aml errorororor
+import { HomeComponent } from './components/home/home.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
+// //// import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
+
 // //////header components
 import { RegistrationComponent } from './components/shared/header/registration/registration.component';
 import { SignInComponent } from './components/shared/header/sign-in/sign-in.component';
@@ -15,7 +19,6 @@ import { CartComponent } from './components/shared/header/cart/cart.component';
 import { BlogComponent } from './components/shared/header/blog/blog.component';
 import { AboutUsComponent } from './components/shared/header/about-us/about-us.component';
 // ///////////////////
-// //// import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 // /////// USER ONLY components
 import {receiptComponent} from './components/orders page/receipt/receipt.component';
 import { OrdersComponent } from './components/orders page/orders.page.component';
@@ -29,22 +32,24 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 
 const routes = [
-  // {path:'', component: HomeComponent },
   {path:'products',component:ProductsComponent },
   { path:'login',component:SignInComponent },
   { path:'registration',component:RegistrationComponent },
-  // {path:'signin', component:SignInComponent},
   {path:'receipt', component:receiptComponent },
   { path:'search', component:SearchBarComponent },
-  // { path: 'home', component: HomeComponent},
-  { path: 'blog', component: BlogComponent },
-  // // { path: 'readmore', component: ReadMoreComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'profile', component: ProfileComponent },//canActivate: [AuthGuard]
-  // { path: 'buynow', component: BuyNowComponent },
+  { path: 'blog', component: BlogComponent },
   { path: 'aboutus', component: AboutUsComponent },
   { path: 'products/:id', component:ProductdetailsComponent },
-  { path: 'cart', component: CartComponent }, 
+  { path: 'cart', component: CartComponent },
+   
+  /////elly 3aml errororor -_-
+  {path:'', component: HomeComponent },
+  // {path:'signin', component:SignInComponent},
+  // { path: 'home', component: HomeComponent},
+  // // { path: 'readmore', component: ReadMoreComponent },
+  // { path: 'buynow', component: BuyNowComponent },
 
   // ///Admin Components
   // { path: 'editproduct', component: EditProductComponent ,canActivate: [AuthGuard,AdminGuard]},
