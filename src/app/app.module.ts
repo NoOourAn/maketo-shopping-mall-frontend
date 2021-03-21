@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { ProductsService } from './services/products.service';
 import { HttpClientModule } from "@angular/common/http";
 // import { SearchBarComponent } from './components/search/search-bar/search-bar.component';
-// import { ProductsComponent } from './components/products/products.component';
+import { ProductsComponent } from './components/products/products.component';
 import { RegistrationComponent } from './components/shared/header/registration/registration.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -47,7 +47,7 @@ import { OrdersService } from './services/orders.service';
   declarations: [
     AppComponent,
     // SearchBarComponent,
-    // ProductsComponent,
+    ProductsComponent,
     // BgReviewComponent,
     // FooterComponent,
     // ShoppingListComponent,

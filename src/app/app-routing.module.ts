@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 /////// USER or GUEST components
 // import { HomeComponent } from './components/home/home.component';
-// import { ProductsComponent } from './components/products/products.component';
+import { ProductsComponent } from './components/products/products.component';
 // import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 // import { SearchBarComponent } from './components/search/search-bar/search-bar.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
@@ -31,7 +31,7 @@ import { AdminGuard } from './guards/admin.guard';
 
 const routes = [
   // {path:'', component: HomeComponent },
-  // {path:'products',component:ProductsComponent,canActivate: [AuthGuard]},
+  {path:'products',component:ProductsComponent },
   { path:'login',component:SignInComponent },
   { path:'registration',component:RegistrationComponent },
   // {path:'signin', component:SignInComponent},
