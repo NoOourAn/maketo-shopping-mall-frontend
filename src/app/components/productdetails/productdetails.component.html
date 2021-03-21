@@ -15,7 +15,7 @@
 
                         <div class="mdb-lightbox">
                             <div class="row product-gallery mx-1">
-                                <div *ngIf="product.imgUrl" class="col-12 mb-0">
+                                <div *ngIf="this.productSercice.productDetail.products[0].imgUrl" class="col-12 mb-0">
                                     <figure class="view overlay rounded z-depth-1 main-img">
                                         <a [href]="this.productSercice.productDetail.products[0].imgUrl" data-size="710x823">
                                             <img *ngIf="this.productSercice.productDetail.products[0].imgUrl" class="img-fluid z-depth-1" alt="Bologna" [src]="product.imgUrl">
