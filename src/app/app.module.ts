@@ -10,8 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 // import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-review.component';
-// import { FooterComponent } from './components/shared/footer/footer.component';
-// import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 // import { ShoppingListComponent } from './components/home/2ndsectionShopping/shopping-list.component';
 // import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-brief.component';
 // import { ReviewComponent } from './components/home/4thsectionreview/review.component';
@@ -22,16 +22,16 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { receiptComponent } from './components/orders page/receipt/receipt.component';
 import { EditProductComponent } from './components/dashboard/edit-product/edit-product.component';
 // import { RatingEventsComponent } from './components/home/2ndsectionShopping/rating-events/rating-events.component';
-// import { BlogComponent } from './components/shared/header/blog/blog.component';
+import { BlogComponent } from './components/shared/header/blog/blog.component';
 // import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 // import { HomeComponent } from './components/home/home.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
 import { AuthService } from './services/auth.service';
 import { JwtService } from './services/jwt.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { AboutUsComponent } from './components/shared/header/about-us/about-us.component';
+import { AboutUsComponent } from './components/shared/header/about-us/about-us.component';
 import { OrdereditemComponent } from './components/orders page/ordereditem/ordereditem.component';
-// import { CartComponent } from './components/shared/header/cart/cart.component';
+import { CartComponent } from './components/shared/header/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { AdminControlsComponent } from './components/dashboard/admin-controls/admin-controls.component';
 import { AdminDisplayComponent } from './components/dashboard/admin-display/admin-display.component';
@@ -48,7 +48,7 @@ import { OrdersService } from './services/orders.service';
     SearchBarComponent,
     ProductsComponent,
     // BgReviewComponent,
-    // FooterComponent,
+    FooterComponent,
     // ShoppingListComponent,
     // SliderBriefComponent,
     // ReviewComponent,
@@ -63,11 +63,11 @@ import { OrdersService } from './services/orders.service';
     // BuyNowComponent,
     OrdereditemComponent,
     RegistrationComponent,
-    // BlogComponent,
+    BlogComponent,
     SignInComponent,
-    // AboutUsComponent,
-    // HeaderComponent,
-    // CartComponent,
+    AboutUsComponent,
+    HeaderComponent,
+    CartComponent,
     AdminControlsComponent,
     AdminDisplayComponent,
     DashboardComponent,

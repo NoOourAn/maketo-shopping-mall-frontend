@@ -11,9 +11,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 // //////header components
 import { RegistrationComponent } from './components/shared/header/registration/registration.component';
 import { SignInComponent } from './components/shared/header/sign-in/sign-in.component';
-// import { CartComponent } from './components/shared/header/cart/cart.component';
-// import { BlogComponent } from './components/shared/header/blog/blog.component';
-// import { AboutUsComponent } from './components/shared/header/about-us/about-us.component';
+import { CartComponent } from './components/shared/header/cart/cart.component';
+import { BlogComponent } from './components/shared/header/blog/blog.component';
+import { AboutUsComponent } from './components/shared/header/about-us/about-us.component';
 // ///////////////////
 // //// import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 // /////// USER ONLY components
@@ -37,14 +37,14 @@ const routes = [
   {path:'receipt', component:receiptComponent },
   { path:'search', component:SearchBarComponent },
   // { path: 'home', component: HomeComponent},
-  // { path: 'blog', component: BlogComponent },
+  { path: 'blog', component: BlogComponent },
   // // { path: 'readmore', component: ReadMoreComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'profile', component: ProfileComponent },//canActivate: [AuthGuard]
   // { path: 'buynow', component: BuyNowComponent },
-  // { path: 'aboutus', component: AboutUsComponent },
+  { path: 'aboutus', component: AboutUsComponent },
   { path: 'products/:id', component:ProductdetailsComponent },
-  // { path: 'orders', component: CartComponent }, 
+  { path: 'cart', component: CartComponent }, 
 
   // ///Admin Components
   // { path: 'editproduct', component: EditProductComponent ,canActivate: [AuthGuard,AdminGuard]},
