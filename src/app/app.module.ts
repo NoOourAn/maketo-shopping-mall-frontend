@@ -37,8 +37,6 @@ import { OrdersService } from './services/orders.service';
 import { HomeComponent } from './components/home/home.component';
 import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-brief.component';
 import { ShoppingListComponent } from './components/home/2ndsectionShopping/shopping-list.component';
-import { ReviewComponent } from './components/home/4thsectionreview/review.component';
-// import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
 // import { RatingEventsComponent } from './components/home/2ndsectionShopping/rating-events/rating-events.component';
 // import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-review.component';
@@ -69,10 +67,8 @@ import { ReviewComponent } from './components/home/4thsectionreview/review.compo
     HomeComponent,
     SliderBriefComponent,
     ShoppingListComponent,
-    ReviewComponent,
     // BgReviewComponent,
     // RatingEventsComponent,
-    // ReadMoreComponent,
     // BuyNowComponent,
   ],
   imports: [

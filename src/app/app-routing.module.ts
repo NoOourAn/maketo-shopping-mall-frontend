@@ -10,7 +10,6 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 ////ellly 3aml errorororor
 import { HomeComponent } from './components/home/home.component';
 // import { BuyNowComponent } from './components/home/1stsectionSlider/buy-nowBtn/buy-now.component';
-// //// import { ReadMoreComponent } from './components/home/4thsectionreview/read-more/read-more.component';
 
 // //////header components
 import { RegistrationComponent } from './components/shared/header/registration/registration.component';
@@ -48,7 +47,6 @@ const routes = [
   {path:'', component: HomeComponent },
   // { path: 'home', component: HomeComponent},
   // {path:'signin', component:SignInComponent},
-  // // { path: 'readmore', component: ReadMoreComponent },
   // { path: 'buynow', component: BuyNowComponent },
 
   // ///Admin Components
