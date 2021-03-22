@@ -30,7 +30,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 
 const routes = [
-  {path:'products',component:ProductsComponent,canActivate: [AuthGuard] },
+  {path:'products',component:ProductsComponent},
   { path:'login',component:SignInComponent },
   { path:'register',component:RegistrationComponent },
   {path:'receipt', component:receiptComponent,canActivate: [AuthGuard] },

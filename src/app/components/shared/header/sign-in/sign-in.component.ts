@@ -55,12 +55,11 @@ export class SignInComponent implements OnInit {
                 if(localStorage.getItem('admin')){
                   localStorage.removeItem("admin"); 
                 }
+
+                this.authService.login();
+                this.route.navigate(['/home']);
               }
 
-           this.authService.login();
-             
-           this.route.navigate(['/home']);
-           window.location.reload();
             }else{
               this.errorMsg = this.response.message
             }

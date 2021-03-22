@@ -143,5 +143,51 @@ ordersArray=[]
   console.log(err)
     })
   }
+///////////////update profile image
+
+  errorMsg
+  successMsg
+  ////i do it manually cuz ngModel doesn't work with input[type="file"]
+  /// so i have to create my own directive
+  uploadedFile
+  fileChange(element) {
+    if (element.target.files.length > 0)
+      this.uploadedFile = element.target.files[0];
+  }
+  /////change image form
+  ChangeImageForm = new FormGroup({
+    image:new FormControl('',[]),
+  })
+  /////change image modal
+  openEditImageModal(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      /// if he hit submit
+      this.updateMyImage()
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  /////change image btn
+  updateMyImage(){
+    this.subscriber =  this.JwtService.updateProfileImage(this.uploadedFile)
+    .subscribe((response)=>{
+      console.log(response)
+      this.res=response;
+      if(this.res.success)
+      {
+        this.successMsg = "image changed successfully"
+        this.getMyProfile();
+      }
+      else
+      {
+        this.errorMsg = this.res.message
+      }
+    },
+    (err)=>{
+      console.log(err)
+    })
+  }
+
 
 }

@@ -117,7 +117,7 @@ export class ProductsService {
     formData.append('numberInStock',product.numInStock);
     formData.append('price',product.price);
     formData.append('description',product.desc);
-    return this.myClient.patch(`${this.UpdateProduct}/${id}`,product)
+    return this.myClient.patch(`${this.UpdateProduct}/${id}`,formData)
   }
   
   deleteProduct(id){

@@ -45,6 +45,16 @@ export class JwtService {
     headers = headers.set('access_token', localStorage.getItem("access_token"))
     return  this.httpClient.patch(`${environment.api}/api/users/profileUpdate`,user,{headers:headers})
   }
+
+  updateProfileImage(image){
+    let headers = new HttpHeaders();
+    headers = headers.set('access_token', localStorage.getItem("access_token"))
+    ///sending image as a file
+    var formData = new FormData()
+    formData.append('file',image);
+
+    return  this.httpClient.patch(`${environment.api}/api/users/imgUpdate`,formData,{headers:headers})
+  }
   
   deleteUser(){
     let headers = new HttpHeaders();

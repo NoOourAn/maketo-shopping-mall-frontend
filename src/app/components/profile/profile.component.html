@@ -8,11 +8,20 @@
     <div class="alert alert-danger" *ngIf="this.JwtService.err">{{this.JwtService.err}}</div>
     <div class="alert alert-success" *ngIf="this.JwtService.succ">{{this.JwtService.succ}}</div>
 
+    
+    <div *ngIf="errorMsg" class="alert alert-danger text-center">
+        {{ errorMsg }}
+    </div>
+
+    <div *ngIf="successMsg" class="alert alert-success text-center">
+        {{ successMsg }}
+    </div>
+    
     <div class="row">
         <div class="col-md-4">
             <div class="profile-img">
                 <img [src]="user.imgUrl"/>
-                <div class="file btn btn-lg btn-primary">
+                <div class="file btn btn-lg btn-primary" (click)="openEditImageModal(changeImage)">
                     Change Photo
                 </div>
             </div>
@@ -180,7 +189,7 @@
                             </p>
                         </div>
                         <div class="form-group text-center">
-                            <input type="button" class="btn btn-dark" value="update" (click)="updateMyProfile()" (click)="modal.close('Save click')" />
+                            <input type="button" class="btn btnSubmit" value="update" (click)="updateMyProfile()" (click)="modal.close('Save click')" />
                         </div>
 
 
@@ -193,3 +202,25 @@
             </ng-template>
 
             <app-footer></app-footer>
+
+
+<!-- Change user image   -->
+<ng-template #changeImage let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update Image</h4>
+      <button class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </button>
+    </div>
+    <form [formGroup]="ChangeImageForm">
+      <div class="modal-body">
+        <div class="form-group">
+            <input (change)="fileChange($event)" formControlName="image" type="file" class="form-control" id="customFile"/>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btnSubmit" (click)="modal.close()">Change</button>
+      </div>
+    </form>
+  
+  </ng-template>
