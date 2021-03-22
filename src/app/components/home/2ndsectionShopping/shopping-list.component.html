@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col" *ngFor="let product of productsArray">
             <div class="card" style="width: 14rem;">
-                <img *ngIf="product.imgUrl" class="card-img-top" alt="Bologna" [src]="product.imgUrl">
+                <img style="width: 250px; height: 300x;"*ngIf="product.imgUrl" class="card-img-top" alt="Bologna" [src]="product.imgUrl">
                 <div class="card-body">
                     <h4 class="card-title">{{product.name}}</h4>
                     <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>
@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col" *ngFor="let product of lowPriceProducts">
             <div class="card" style="width: 14rem;">
-                <img class="card-img-top" alt="Bologna">
+                <img style="width: 300px; height: 250px;" class="card-img-top" alt="Bologna" [src]="product.imgUrl">
                 <div class="card-body">
                     <h4 class="card-title">{{product.name}}</h4>
                     <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>

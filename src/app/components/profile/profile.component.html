@@ -103,10 +103,10 @@
                         <div class="row mb-4">
                             <div class="col-md-5 col-lg-3 col-xl-3">
                                 <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="Sample">
+                                    <img class="img-fluid w-100" src="https://images-na.ssl-images-amazon.com/images/I/418wK%2B6vaQL.png" alt="Sample">
                                     <a href="#!">
                                         <div class="mask waves-effect waves-light">
-                                            <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg">
+                                            <img class="img-fluid w-100" src="https://images-na.ssl-images-amazon.com/images/I/418wK%2B6vaQL.png">
                                             <div class="mask rgba-black-slight waves-effect waves-light"></div>
                                         </div>
                                     </a>
@@ -116,21 +116,19 @@
                                 <div>
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h5>Blue denim shirt</h5>
-                                            <p class="mb-3 text-muted text-uppercase small">{{product.category}}</p>
-                                            <p class="mb-2 text-muted text-uppercase small">{{product.brand}}</p>
+                                            <h5>Order id : {{product._id}}</h5>
+                                            <div *ngFor="let p of product.products">
+                                            <p class="mb-3 text-muted text-uppercase small">Product Name : {{p.productName}}</p>
+                                            <p class="mb-2 text-muted text-uppercase small">Quantaty : {{p.quantity}}</p>
                                         </div>
-                                        <div>
 
-                                            <small id="passwordHelpBlock" class="form-text text-muted text-center">
-                    (Note, 1 piece)
-                  </small>
+                                        </div>
+                                        <div>                           
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
 
                                     </div>
-                                    <p class="mb-0"><span><strong>{{product.price}}</strong></span></p>
                                 </div>
                             </div>
                         </div>

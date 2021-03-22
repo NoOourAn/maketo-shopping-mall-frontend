@@ -140,6 +140,7 @@ ordersArray=[]
   
     this.orders = this.res.orders
     this.ordersArray = this.orders
+    console.log(this.ordersArray)
 
 
     },
