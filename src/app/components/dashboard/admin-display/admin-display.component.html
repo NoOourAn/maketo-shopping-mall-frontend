@@ -39,7 +39,7 @@
             <a [href]="product.imgUrl">Img</a>
           </td>
           <td>
-            <button class="btn" (click)="updateProduct(product._id)">Edit</button>
+            <button class="btn" routerLink="/editproduct/${product._id}">Edit</button>
           </td>
           <td>
             <button class="btn" (click)="deleteProduct(product._id)">Delete</button>
@@ -49,8 +49,8 @@
         </tbody>
         </table>
     </div>
+    <button class="btn btn-primary" routerLink="/createproduct">Add New Product</button>
   </div>
-  <button class="btn btn-primary" routerLink="/createproduct">Add New Product</button>
 
     <!-- orders -->
     <div *ngSwitchCase="1">
@@ -103,7 +103,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Created At</th>
-            <!-- <th>Image</th> -->
+            <th>Image</th>
             </tr>
             </thead>
             <tbody>
@@ -111,9 +111,9 @@
               <td>{{ user.username }}</td>
               <td>{{ user.email }}</td>
               <td>{{ user.createdAt }}</td>
-              <!-- <td *ngIf="user.imgUrl;else notExist">
+              <td *ngIf="user.imgUrl;else notExist">
                 <a [href]="user.imgUrl">Img</a>
-              </td> -->
+              </td>
             </tr>
             </tbody>
             </table>

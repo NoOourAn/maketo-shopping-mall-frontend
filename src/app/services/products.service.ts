@@ -78,16 +78,8 @@ export class ProductsService {
       })
   }
   productDetail
-  getProductsByID(id)
-  {
-    return this.myClient.get(this.GetProducts,{
-        params:{
-          id:id
-        }
-      })
-  }
 
-  getProductsByID2(id)
+  getProductsByID(id)
   {
     return this.myClient.get(`${this.GetProductsById}/${id}`)
   }
@@ -115,7 +107,7 @@ export class ProductsService {
     return this.myClient.post(this.AddProduct,formData);
   }
 
-  updateProduct(id,product){
+  updateProduct(id,product,image){
     return this.myClient.patch(`${this.UpdateProduct}/${id}`,product)
   }
   

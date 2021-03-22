@@ -138,12 +138,6 @@ export class AdminDisplayComponent implements OnInit,OnDestroy {
     })
   }
 
-  
-  ///update product
-  updateProduct(id){
-
-  }
-
     ///change status modal
     closeResult = '';
     openEditStatusModal(content,id) {

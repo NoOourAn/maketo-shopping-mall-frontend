@@ -17,7 +17,7 @@ this.getSpecificProductById(this.myActivatedRoute.snapshot.params.id)  }
   
   Pid
   getSpecificProductById(id){
-    let sub =  this.productSercice.getProductsByID2(id)
+    let sub =  this.productSercice.getProductsByID(id)
     .subscribe((response)=>{
   console.log(response)
   this.Pid=response;
