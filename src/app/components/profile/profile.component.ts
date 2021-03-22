@@ -82,10 +82,10 @@ export class ProfileComponent implements OnInit,OnDestroy {
     .subscribe((response)=>{
  console.log(response)
  this.res=response;
- if(this.res.success)
+ if(!this.res.success)
  {
   this.getMyProfile();
-   this.JwtService.err=this.res.message
+  this.JwtService.err="this information is already exists"
    this.JwtService.succ=""
 //   window.location.reload(); 
 
@@ -111,6 +111,10 @@ export class ProfileComponent implements OnInit,OnDestroy {
     };
     this.myForm.patchValue(userDetails)
   }
+  logout(){
+    this.JwtService.logout()
+    this.router.navigate(['/home']);
+  }
 
   deleteUser(){
     let sub =  this.JwtService.deleteUser()
@@ -119,7 +123,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
     this.user="";
     this.JwtService.user=""
     localStorage.clear;
-    this.router.navigate(['/home'])
+    this.logout();
 },
  (err)=>{
 console.log(err)
