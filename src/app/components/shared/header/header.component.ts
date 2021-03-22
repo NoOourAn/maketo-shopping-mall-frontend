@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { CartService } from '../../../services/cart.service';
 import { LoginService } from '../../../services/login.service';
+import { JwtService } from '../../../services/jwt.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,7 +12,7 @@ import { LoginService } from '../../../services/login.service';
 export class HeaderComponent implements OnInit {
 
     noOfcartItem
-  constructor(private route:Router,private CartService:CartService,public loginService: LoginService){} 
+  constructor(private route:Router,private CartService:CartService,public loginService: LoginService,private JwtService:JwtService){} 
   
   	search(){
 		this.route.navigate(['/search']); 
@@ -43,6 +45,15 @@ export class HeaderComponent implements OnInit {
   register(){
 		this.route.navigate(['/register']);
 	}
+
+  isLogin(){
+    return this.JwtService.loggedIn
+  }
+  logout(){
+    this.JwtService.logout()
+    this.route.navigate(['/home']);
+  }
+
   ngOnInit(): void {
     this.CartService.getNumberOfItemINcart.subscribe(res=>{
       this.noOfcartItem=res;

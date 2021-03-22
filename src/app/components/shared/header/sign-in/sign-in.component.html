@@ -1,4 +1,6 @@
 <!-- Default form subscription -->
+<app-header></app-header>
+
 <br>
 <br>
 <br>
@@ -8,13 +10,12 @@
     <div class="col-6">
         <form class="text-center border border-light p-5" form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-            <p class="h4 mb-4">Subscribe</p>
+            <p class="h4 mb-4">login</p>
 
-            <p>Join our mailing list. We write rarely, but only with the best content.</p>
+            <div *ngIf="errorMsg" class="alert alert-danger text-center">
+                {{ errorMsg }}
+            </div>
 
-            <p>
-                <a href="" target="_blank">See the last newsletter</a>
-            </p>
             <input matInput type="text" placeholder="username" class="form-control mb-4" formControlName="username" required>
             <p *ngIf="isFieldInvalid('username')">
                 Please inform your username
@@ -33,4 +34,9 @@
         </form>
         <!-- Default form subscription -->
     </div>
+    <div class="col-6">
+        <img src="assets/bg.png" alt="img not found">
+    </div>
 </div>
+
+<app-footer></app-footer>

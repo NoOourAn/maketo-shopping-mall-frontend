@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <form [formGroup]="userForm" (ngSubmit)="submit()" class="text-center border border-light p-5" enctype="multipart/form-data">
 
     <div class="container register-form">
@@ -81,12 +83,19 @@
                                 </span>
                             </p>
                         </div>
+                        <button type="button" (click)="submit();" class="btnSubmit">Submit</button>
                         
                     </div>
+
+                    <div class="col-md-6">
+
+                    </div>
+
                 </div>
-                <button type="button" (click)="submit();" class="btnSubmit">Submit</button>
             </div>
         </div>
     </div>
 
 </form>
+
+<app-footer></app-footer>

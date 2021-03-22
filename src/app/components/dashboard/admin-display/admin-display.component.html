@@ -39,7 +39,7 @@
             <a [href]="product.imgUrl">Img</a>
           </td>
           <td>
-            <button class="btn" routerLink="/editproduct/${product._id}">Edit</button>
+            <button class="btn" routerLink="/editproduct/{{ product._id }}">Edit</button>
           </td>
           <td>
             <button class="btn" (click)="deleteProduct(product._id)">Delete</button>

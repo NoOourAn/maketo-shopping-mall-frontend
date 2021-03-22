@@ -30,31 +30,26 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 
 const routes = [
-  {path:'products',component:ProductsComponent },
+  {path:'products',component:ProductsComponent,canActivate: [AuthGuard] },
   { path:'login',component:SignInComponent },
   { path:'register',component:RegistrationComponent },
-  {path:'receipt', component:receiptComponent },
+  {path:'receipt', component:receiptComponent,canActivate: [AuthGuard] },
   { path:'search', component:SearchBarComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'profile', component: ProfileComponent },//canActivate: [AuthGuard]
+  { path: 'orders', component: OrdersComponent,canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent,canActivate: [AuthGuard] },
   { path: 'blog', component: BlogComponent },
   { path: 'aboutus', component: AboutUsComponent },
   { path: 'products/:id', component:ProductdetailsComponent },
   { path: 'cart', component: CartComponent },
    
   /////elly 3aml errororor -_-
-  {path:'', component: HomeComponent },
-  // { path: 'home', component: HomeComponent},
+  { path:'', component: HomeComponent },
+  { path: 'home', component: HomeComponent},
 
-  // ///Admin Components
-  // { path: 'editproduct', component: EditProductComponent ,canActivate: [AuthGuard,AdminGuard]},
-  // { path: 'createproduct', component: CreateProductComponent,canActivate: [AuthGuard,AdminGuard] },
-  // { path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard,AdminGuard] },
-
-    ///Admin Components
-    { path: 'editproduct', component: EditProductComponent },
-    { path: 'createproduct', component: CreateProductComponent },
-    { path: 'dashboard', component: DashboardComponent },
+  ///Admin Components
+  { path: 'editproduct/:id', component: EditProductComponent,canActivate: [AdminGuard] },
+  { path: 'createproduct', component: CreateProductComponent ,canActivate: [AdminGuard]},
+  { path: 'dashboard', component: DashboardComponent,canActivate: [AdminGuard] },
 ]
 ;
 

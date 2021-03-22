@@ -108,6 +108,15 @@ export class ProductsService {
   }
 
   updateProduct(id,product,image){
+    console.log(product)
+    var formData = new FormData()
+    formData.append('file',image);
+    formData.append('name',product.productName);
+    formData.append('brand',product.brand);
+    formData.append('category',product.category);
+    formData.append('numberInStock',product.numInStock);
+    formData.append('price',product.price);
+    formData.append('description',product.desc);
     return this.myClient.patch(`${this.UpdateProduct}/${id}`,product)
   }
   

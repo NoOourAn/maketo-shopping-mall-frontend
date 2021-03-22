@@ -26,18 +26,31 @@ export class EditProductComponent implements OnInit,OnDestroy {
   subscriber
   res
   errorMsg
+
   getSpecificProductById(id){
     this.subscriber =  this.productService.getProductsByID(id)
     .subscribe((response)=>{
-      console.log(response)
-      this.product=response;
-      console.log(this.product)
+      this.res=response;
+      this.product = this.res.products[0]
+      this.setDefault()
     },
     (err)=>{
       console.log(err)
     })
   }
 
+  ///set the form default with product details
+  setDefault() {
+    let productDetail = {
+      productName: this.product.name,
+      desc: this.product.description,
+      category: this.product.category,
+      brand: this.product.brand,
+      numInStock: this.product.numberInStock,
+      price:this.product.price,
+    };
+    this.EditProductForm.patchValue(productDetail)
+  }
 
     ////edit product form
     EditProductForm = new FormGroup({
@@ -74,6 +87,7 @@ export class EditProductComponent implements OnInit,OnDestroy {
       this.subscriber = this.productService.updateProduct(this.id,this.EditProductForm.value,this.uploadedFile)
       .subscribe((response)=>{
         this.res = response
+        console.log(this.res)
         if(this.res.success){
           this.EditProductForm.reset()
           this.router.navigate(['dashboard'])

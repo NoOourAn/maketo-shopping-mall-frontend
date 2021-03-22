@@ -5,14 +5,15 @@
             <div class="note">
                 <p>Update Product</p>
             </div>
+            <!-- error msg if updating failed -->
+            <div *ngIf="errorMsg" class="alert alert-danger my-2" role="alert">
+            {{errorMsg}}
+            </div>
             <div class="form-content">
                 <div class="form-row">
-                   <!-- error msg if updating failed -->
-                    <div *ngIf="errorMsg" class="alert alert-danger my-2" role="alert">
-                      {{errorMsg}}
-                    </div>
+                   
                     <div class="col-md-6">
-  
+ 
                       <!-- ////////////////////////////// -->
                         <!-- product name -->
                         <div class="form-group">

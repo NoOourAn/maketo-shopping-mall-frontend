@@ -55,12 +55,16 @@ export class JwtService {
 
 logout() {
   localStorage.removeItem('access_token');
+  if(localStorage.getItem('admin'))
+    localStorage.removeItem('admin');
 }
 public get loggedIn(): boolean{
-  return localStorage.getItem('access_token') !==  null;
+  return localStorage.getItem('access_token') !==  null 
+         && localStorage.getItem('admin') ==  null;
 }
 public get admin(): boolean{
-  return localStorage.getItem('admin') !==  null;
+  return  localStorage.getItem('access_token') !==  null
+          && localStorage.getItem('admin') !==  null;
 }
 }
 
