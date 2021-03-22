@@ -5,11 +5,9 @@
 <br>
 <br>
 <div class="container emp-profile">
-    <div class="alert alert-danger" *ngIf="this.JwtService.err">{{this.JwtService.err}}</div>
+ <div class="alert alert-danger" *ngIf="this.JwtService.err">{{this.JwtService.err}}</div>
     <div class="alert alert-success" *ngIf="this.JwtService.succ">{{this.JwtService.succ}}</div>
-
-    
-    <div *ngIf="errorMsg" class="alert alert-danger text-center">
+	   <div *ngIf="errorMsg" class="alert alert-danger text-center">
         {{ errorMsg }}
     </div>
 
@@ -17,15 +15,16 @@
         {{ successMsg }}
     </div>
     
-    <div class="row">
-        <div class="col-md-4">
-            <div class="profile-img">
-                <img [src]="user.imgUrl"/>
-                <div class="file btn btn-lg btn-primary" (click)="openEditImageModal(changeImage)">
-                    Change Photo
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                   <img [src]="user.imgUrl"/> 
+                    <div class="file btn btn-lg btn-primary" (click)="openEditImageModal(changeImage)">>
+                        Change Photo
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6" *ngIf="user">
+              <div class="col-md-6" *ngIf="user">
                 <div class="profile-head">
                     <h5>
                     {{user.username}}
@@ -33,30 +32,30 @@
                     <h6>
                         {{user.email}}
                     </h6>
-
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                        </li>
-
+                        </li>                       
                     </ul>
                 </div>
             </div>
+			
             <div class="col-md-2">
-                <button type="submit" class="profile-edit-btn" (click)="setDefault()" (click)="open(mymodal)"> Edit Profile</button>
-                <button type="submit" class="profile-edit-btn" (click)="deleteUser()">Delete Profile</button>
-            </div>
-        </div>
-    </div>
-   
-</div>
-<div class="row">
-    <div class="col-md-4">
+			
+  <button type="submit" class="profile-edit-btn" (click)="setDefault()" (click)="open(mymodal)"> Edit Profile</button>
+                <button type="submit" class="profile-edit-btn" (click)="deleteUser()">Delete Profile</button> 
 
-    </div>
-    <div class="col-md-8" *ngIf="user">
-        <div class="tab-content profile-tab" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+
+                </div>
+            </div>
+            <div class="col-md-8"  *ngIf="user">
+                <div class="tab-content profile-tab" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="row" >
                     <div class="col-md-6">
                         <label>Username</label>
@@ -67,9 +66,6 @@
                 </div>
                 <div class="row" >
                     <div class="col-md-6">
-
-
-
                         <label>Name</label>
                     </div>
                     <div class="col-md-6">
@@ -86,14 +82,14 @@
                 </div>
 
             </div>
-
-
+                   
+                </div>
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-
+</div>
+<br>
+<br>
+<br>
     <!-- order -->
     <div class="row">
         <div class="col-lg-12">
