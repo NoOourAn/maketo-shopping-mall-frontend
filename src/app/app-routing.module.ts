@@ -30,17 +30,17 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 
 const routes = [
-  {path:'products',component:ProductsComponent},
+  {path:'products',component:ProductsComponent,canActivate: [AuthGuard] },
   { path:'login',component:SignInComponent },
   { path:'register',component:RegistrationComponent },
   {path:'receipt', component:receiptComponent,canActivate: [AuthGuard] },
-  { path:'search', component:SearchBarComponent },
+  { path:'search', component:SearchBarComponent,canActivate: [AuthGuard]  },
   { path: 'orders', component: OrdersComponent,canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent,canActivate: [AuthGuard] },
   { path: 'blog', component: BlogComponent },
   { path: 'aboutus', component: AboutUsComponent },
   { path: 'products/:id', component:ProductdetailsComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent,canActivate: [AuthGuard] },
    
   /////elly 3aml errororor -_-
   { path:'', component: HomeComponent },

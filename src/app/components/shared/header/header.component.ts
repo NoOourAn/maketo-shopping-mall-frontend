@@ -52,6 +52,7 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.JwtService.logout()
     this.route.navigate(['/home']);
+    window.location.reload();
   }
 
   ngOnInit(): void {
