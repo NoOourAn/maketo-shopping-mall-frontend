@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtService } from '../../../services/jwt.service';
 import { AdminService } from '../../../services/admin.service';
 
 @Component({
@@ -8,9 +9,13 @@ import { AdminService } from '../../../services/admin.service';
 })
 export class AdminControlsComponent implements OnInit {
 
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService,private jwtService:JwtService) { }
+
+  res
+  admin
 
   ngOnInit(): void {
+    this.getAdminProfile()
   }
   showProducts(){
     this.adminService.setFlag(0) ///to update the sibling (admin display component) with products
@@ -20,5 +25,16 @@ export class AdminControlsComponent implements OnInit {
   }
   showUsers(){
     this.adminService.setFlag(2) ///to update the sibling (admin display component) with users
+  }
+
+  getAdminProfile(){
+    let sub =  this.jwtService.myProfile()
+    .subscribe((response)=>{
+      this.res=response;
+      this.admin = this.res.user
+    },
+    (err)=>{
+      console.log(err)
+    })
   }
 }
