@@ -114,6 +114,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
   logout(){
     this.JwtService.logout()
     this.router.navigate(['/home']);
+    localStorage.clear()
      window.location.reload(); 
 
   }
