@@ -14,9 +14,9 @@ export class ProductsService {
   private GetCategories:string = `${environment.api}/api/products/getCategory`;
   private GetBrand:string = `${environment.api}/api/products/getBrand`;
   private AddProduct:string = `${environment.api}/api/products/`;
-  private UpdateProduct:string = `${environment.api}/api/products/`;
-  private DeleteProduct:string = `${environment.api}/api/products/`;
-  private GetProductsById:string = `${environment.api}/api/products/`;
+  private UpdateProduct:string = `${environment.api}/api/products`;
+  private DeleteProduct:string = `${environment.api}/api/products`;
+  private GetProductsById:string = `${environment.api}/api/products`;
 
   getProducts(){
     return this.myClient.get(this.GetProducts)
