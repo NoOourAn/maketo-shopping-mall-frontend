@@ -1,13 +1,18 @@
-<div class="profile-img">
-</div>
-<div class="profile-detail text-center">
-    <p>Nouran Mossad</p>
-    <p>nouranaborwash@gmail.com</p>
-</div>
-<div class="controls text-center">
-    <ul>
-        <li (click)="showProducts()">Products</li>
-        <li (click)="showOrders()">Orders</li>
-        <li (click)="showUsers()">Users</li>
-    </ul>
+<div class="d-flex flex-column justify-content-center align-items-center text-center">
+
+    <div class="profile-img">
+        <img [src]="admin.imgUrl" alt="no img found">
+    </div>
+    <div class="profile-detail">
+        <p>{{ admin.username }}</p>
+        <p>{{ admin.email }}</p>
+    </div>
+    <div class="controls">
+        <ul>
+            <li (click)="showProducts()">Products</li>
+            <li (click)="showOrders()">Orders</li>
+            <li (click)="showUsers()">Users</li>
+        </ul>
+    </div>
+
 </div>

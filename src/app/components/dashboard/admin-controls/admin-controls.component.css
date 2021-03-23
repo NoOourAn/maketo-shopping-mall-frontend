@@ -1,10 +1,9 @@
 .profile-img{
     width: 150px;
     height: 150px;
-    /* background: url("/assets/1.jpg") no-repeat center; */
     background-position: center;
     border-radius: 50%;
-    margin-left: 40px;
+    /* margin-left: 40px; */
     padding: 0px;
 }
 .profile-detail{
