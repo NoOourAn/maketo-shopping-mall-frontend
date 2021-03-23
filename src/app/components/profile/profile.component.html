@@ -112,7 +112,10 @@
                                 <div>
                                     <div class="d-flex justify-content-between">
                                         <div>
-                                            <h5>Order id : {{product._id}}</h5>
+                                            <h4>Order id : {{product._id}}</h4>
+                                            <h5>Order Total Price : {{product.totalPrice}}</h5>
+                                            <h3 style="color: brown;">Order status : {{product.status}}</h3>
+
                                             <div *ngFor="let p of product.products">
                                             <p class="mb-3 text-muted text-uppercase small">Product Name : {{p.productName}}</p>
                                             <p class="mb-2 text-muted text-uppercase small">Quantaty : {{p.quantity}}</p>
