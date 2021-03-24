@@ -28,6 +28,7 @@ export class OrdersComponent implements OnInit {
     this.getProductsInCart();
   }
   getProductsInCart() {
+    this.totalPrice = 0;
     this.productsArray=[];
     if(this.cart.length!=0){
       console.log(this.cart);
@@ -77,9 +78,9 @@ export class OrdersComponent implements OnInit {
   
   onRemove(id){
     console.log(id);
-  this.cartService.removeFromCart(id);
-  this.fillCartArray()
-  this.getProductsInCart();
+    this.cartService.removeFromCart(id);
+    this.fillCartArray()
+    this.getProductsInCart();
    
   } 
 
