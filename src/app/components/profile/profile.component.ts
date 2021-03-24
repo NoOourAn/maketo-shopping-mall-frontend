@@ -114,6 +114,9 @@ export class ProfileComponent implements OnInit,OnDestroy {
   logout(){
     this.JwtService.logout()
     this.router.navigate(['/home']);
+    localStorage.clear()
+     window.location.reload(); 
+
   }
 
   deleteUser(){
@@ -124,6 +127,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
     this.JwtService.user=""
     localStorage.clear;
     this.logout();
+    
 },
  (err)=>{
 console.log(err)
