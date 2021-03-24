@@ -14,5 +14,7 @@
             <li (click)="showUsers()">Users</li>
         </ul>
     </div>
+    <!-- logout -->
+    <button class="btn btn-light" *ngIf="isLoginAsAdmin()" (click)="logout(); " routerLink="/logout ">logout</button>
 
 </div>

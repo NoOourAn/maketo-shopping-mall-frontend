@@ -67,14 +67,15 @@ logout() {
   localStorage.removeItem('access_token');
   if(localStorage.getItem('admin'))
     localStorage.removeItem('admin');
+  localStorage.clear()
 }
 public get loggedIn(): boolean{
   return localStorage.getItem('access_token') !==  null 
-         && localStorage.getItem('admin') ==  'false';
+         && localStorage.getItem('admin') ==  null;
 }
 public get admin(): boolean{
   return  localStorage.getItem('access_token') !==  null
-          && localStorage.getItem('admin') ==  'true';
+          && localStorage.getItem('admin') !==  null;
 }
 }
 

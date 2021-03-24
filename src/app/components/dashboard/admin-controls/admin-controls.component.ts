@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JwtService } from '../../../services/jwt.service';
 import { AdminService } from '../../../services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-controls',
@@ -9,7 +10,7 @@ import { AdminService } from '../../../services/admin.service';
 })
 export class AdminControlsComponent implements OnInit {
 
-  constructor(private adminService:AdminService,private jwtService:JwtService) { }
+  constructor(private adminService:AdminService,private jwtService:JwtService,private route:Router) { }
 
   res
   admin
@@ -36,5 +37,13 @@ export class AdminControlsComponent implements OnInit {
     (err)=>{
       console.log(err)
     })
+  }
+  isLoginAsAdmin(){
+    return this.jwtService.admin
+  }
+  logout(){
+    this.jwtService.logout()
+    this.route.navigate(['/home']);
+    window.location.reload();
   }
 }
