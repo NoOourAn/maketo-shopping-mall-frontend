@@ -70,11 +70,11 @@ logout() {
 }
 public get loggedIn(): boolean{
   return localStorage.getItem('access_token') !==  null 
-         && localStorage.getItem('admin') ==  null;
+         && localStorage.getItem('admin') ==  'false';
 }
 public get admin(): boolean{
   return  localStorage.getItem('access_token') !==  null
-          && localStorage.getItem('admin') !==  null;
+          && localStorage.getItem('admin') ==  'true';
 }
 }
 
