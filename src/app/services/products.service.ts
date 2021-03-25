@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from '../../environments/environment';
-const AWS = require('aws-sdk');
+import { S3 } from 'aws-sdk'
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class ProductsService {
   BUCKET_NAME = 'marketo-e-commerce';
 
   // initialize the S3 interface
-  s3 = new AWS.S3({
+  s3 = new S3({
       accessKeyId: this.ID,
       secretAccessKey: this.SECRET
   });
