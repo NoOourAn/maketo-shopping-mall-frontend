@@ -112,19 +112,6 @@ export class ProductsService {
   }
 
   addProduct(product,image){
-    console.log(product)
-    var formData = new FormData()
-    formData.append('file',image);
-    formData.append('name',product.productName);
-    formData.append('brand',product.brand);
-    formData.append('category',product.category);
-    formData.append('numberInStock',product.numInStock);
-    formData.append('price',product.price);
-    formData.append('description',product.desc);
-    return this.myClient.post(this.AddProduct,formData);
-  }
-
-  updateProduct(id,product,image){
     console.log(image)
     var formData = new FormData()
     formData.append('file',image);
@@ -134,12 +121,13 @@ export class ProductsService {
     formData.append('numberInStock',product.numInStock);
     formData.append('price',product.price);
     formData.append('description',product.desc);
+
     ///////////////
     /// AWS usage
     // Setting up S3 upload parameters
     this.params = {
         Bucket: this.BUCKET_NAME,
-        Key: image.filename, // File name you want to save as in S3
+        Key: "test.jpg", // File name you want to save as in S3
         Body: image,
         // ContentType: req.file.mimetype
     };
@@ -152,7 +140,19 @@ export class ProductsService {
         console.log(`File uploaded successfully. ${data.Location}`);
     });
 
+    return this.myClient.post(this.AddProduct,formData);
+  }
 
+  updateProduct(id,product,image){
+    console.log(product)
+    var formData = new FormData()
+    formData.append('file',image);
+    formData.append('name',product.productName);
+    formData.append('brand',product.brand);
+    formData.append('category',product.category);
+    formData.append('numberInStock',product.numInStock);
+    formData.append('price',product.price);
+    formData.append('description',product.desc);
     return this.myClient.patch(`${this.UpdateProduct}/${id}`,formData)
   }
   
