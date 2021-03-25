@@ -5,12 +5,12 @@
           <div class="note">
               <p>Create Product</p>
           </div>
+          <!-- error msg if creating failed -->
+           <div *ngIf="errorMsg" class="alert alert-danger my-2" role="alert">
+             {{errorMsg}}
+           </div>
           <div class="form-content">
               <div class="form-row">
-                 <!-- error msg if creating failed -->
-                  <div *ngIf="errorMsg" class="alert alert-danger my-2" role="alert">
-                    {{errorMsg}}
-                  </div>
                   <div class="col-md-6">
 
                     <!-- ////////////////////////////// -->
