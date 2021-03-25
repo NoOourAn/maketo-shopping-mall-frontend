@@ -30,25 +30,6 @@ export class OrdersService {
      return this.cartproducts;
   }
 
-  // setOrder(value){
-  //   console.log("set order",value);
-  //   this.userOrder.next(value);
-    
-  // }
-  //  getOrder(){
-    
-  //   return this.userOrder.asObservable();
-  // }
-  //  setCart(value){
-  //     console.log("set cart",value);
-  //   this.cartproducts.next(value);
-    
-  // }
-  // public getCart(){
-   
-  //    return this.cartproducts.asObservable();
-  // }
-  // user can get all orders
   getOrders(){
    const httpOption={
      headers:new HttpHeaders({
