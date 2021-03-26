@@ -23,7 +23,7 @@
               <div class="col-md-6" *ngIf="user">
                 <div class="profile-head">
                     <h5>
-                    {{user.username}}
+                        {{user.username}}
                     </h5>
                     <h6>
                         {{user.email}}
@@ -37,11 +37,9 @@
             </div>
 			
             <div class="col-md-2">
-			
-  <button type="submit" class="profile-edit-btn" (click)="setDefault()" (click)="open(mymodal)"> Edit Profile</button>
+                <button type="submit" class="profile-edit-btn" (click)="setDefault()" (click)="open(mymodal)"> Edit Profile</button>
                 <button type="submit" class="profile-edit-btn" (click)="deleteUser()">Delete Profile</button> 
-
-				</div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -82,120 +80,101 @@
                 </div>
             </div>
         </div>
-
-
-
 <br>
-<br>
-<br>
-    <!-- order -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card wish-list mb-3">
-                <div class="card-body">
 
-                    <h5 class="mb-4">Orders</h5>
-                    <div *ngFor="let product of ordersArray">
-                        <div class="row mb-4">
-                            <div class="col-md-5 col-lg-3 col-xl-3">
-                                <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
-                                    <img class="img-fluid w-100" src="https://images-na.ssl-images-amazon.com/images/I/418wK%2B6vaQL.png" alt="Sample">
-                                    <a href="#!">
-                                        <div class="mask waves-effect waves-light">
-                                            <img class="img-fluid w-100" src="https://images-na.ssl-images-amazon.com/images/I/418wK%2B6vaQL.png">
-                                            <div class="mask rgba-black-slight waves-effect waves-light"></div>
-                                        </div>
-                                    </a>
-                                </div>
+<!-- order -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card wish-list mb-3">
+            <div class="card-body">
+
+                <h5 class="mb-4">Orders</h5>
+                <div *ngFor="let product of ordersArray">
+                    <div class="row mb-4">
+                        <div class="col-md-5 col-lg-3 col-xl-3">
+                            <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                <img class="img-fluid w-100" src="https://images-na.ssl-images-amazon.com/images/I/418wK%2B6vaQL.png" alt="Sample">
+                                <a href="#!">
+                                    <div class="mask waves-effect waves-light">
+                                        <img class="img-fluid w-100" src="https://images-na.ssl-images-amazon.com/images/I/418wK%2B6vaQL.png">
+                                        <div class="mask rgba-black-slight waves-effect waves-light"></div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="col-md-7 col-lg-9 col-xl-9">
-                                <div>
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            <h4>Order id : {{product._id}}</h4>
-                                            <h5>Order Total Price : {{product.totalPrice}}</h5>
-                                            <h3 style="color: brown;">Order status : {{product.status}}</h3>
+                        </div>
+                        <div class="col-md-7 col-lg-9 col-xl-9">
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4>Order id : {{product._id}}</h4>
+                                        <h5>Order Total Price : {{product.totalPrice}}</h5>
+                                        <h3 style="color: brown;">Order status : {{product.status}}</h3>
 
-                                            <div *ngFor="let p of product.products">
-                                            <p class="mb-3 text-muted text-uppercase small">Product Name : {{p.productName}}</p>
-                                            <p class="mb-2 text-muted text-uppercase small">Quantaty : {{p.quantity}}</p>
-                                        </div>
-
-                                        </div>
-                                        <div>                           
-                                        </div>
+                                        <div *ngFor="let p of product.products">
+                                        <p class="mb-3 text-muted text-uppercase small">Product Name : {{p.productName}}</p>
+                                        <p class="mb-2 text-muted text-uppercase small">Quantaty : {{p.quantity}}</p>
                                     </div>
-                                    <div class="d-flex justify-content-between align-items-center">
 
                                     </div>
+                                    <div>                           
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <hr class="mb-4">
             </div>
-</div>
-<br>
-<br>
-
-
-<br>
-            <br>
-            <app-footer></app-footer>
+            <hr class="mb-4">
         </div>
+    </div>
+</div>
 
 
-            <ng-template #mymodal let-modal>
-                <h4 class="text-center p-4">
-                    update
-                </h4>
-                <form [formGroup]="myForm" class="row g-3 ">
-                    <div class="form-group col-12">
+<ng-template #mymodal let-modal>
+    <h4 class="text-center p-4">
+        update
+    </h4>
+    <form [formGroup]="myForm" class="row g-3 ">
+        <div class="form-group col-12">
+            <div class="col-12">
+                <label for="username" class="form-label">username</label>
+                <input type="username" name="username" formControlName="username" value=`${user.username}` formControlValue="user.username" class="form-control" id="username">
+                <p *ngIf="myForm.controls.username.errors  && myForm.controls.username.touched" class="alert alert-danger">
+                    title is not valid
+                    <span *ngIf="myForm.controls.username.errors.required && myForm.controls.username.touched">
+                        plz fill title input
+                    </span>
+                    <span *ngIf="myForm.controls.username.errors.maxlength && myForm.controls.username.touched">
+                        length must be less than 100
+                    </span>
+                    <span *ngIf="myForm.controls.username.errors.mixlength && myForm.controls.username.touched">
+                        length must be more than 3
+                    </span>
+                </p>
+            </div>
 
-                        <div class="col-12">
-                            <label for="username" class="form-label">username</label>
-                            <input type="username" name="username" formControlName="username" value=`${user.username}` formControlValue="user.username" class="form-control" id="username">
-                            <p *ngIf="myForm.controls.username.errors  && myForm.controls.username.touched" class="alert alert-danger">
-                                title is not valid
-                                <span *ngIf="myForm.controls.username.errors.required && myForm.controls.username.touched">
-                plz fill title input
-            </span>
-                                <span *ngIf="myForm.controls.username.errors.maxlength && myForm.controls.username.touched">
-            length must be less than 100
-            </span>
-                                <span *ngIf="myForm.controls.username.errors.mixlength && myForm.controls.username.touched">
-              length must be more than 3
-              </span>
-                            </p>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="email" class="form-label">email</label>
-                            <input type="email" name="email" formControlName="email" value=`${user.email}` class="form-control" id="email" placeholder="email">
-                            <p *ngIf="myForm.controls.email.errors  && myForm.controls.email.touched" class="alert alert-danger">
-                                email is not valid
-                                <span *ngIf="myForm.controls.email.errors.required && myForm.controls.email.touched">
-              plz fill email input
-          </span>
-                                <span *ngIf="myForm.controls.email.errors.email && myForm.controls.email.touched">
-        enter a valid email
-          </span>
-
-                            </p>
-                        </div>
-                        <div class="form-group text-center">
-                            <input type="button" class="btn btnSubmit" value="update" (click)="updateMyProfile()" (click)="modal.close('Save click')" />
-                        </div>
-
-
-
-                    </div>
-
-
-
-                </form>
-            </ng-template>
+            <div class="col-12">
+                <label for="email" class="form-label">email</label>
+                <input type="email" name="email" formControlName="email" value=`${user.email}` class="form-control" id="email" placeholder="email">
+                <p *ngIf="myForm.controls.email.errors  && myForm.controls.email.touched" class="alert alert-danger">
+                    email is not valid
+                    <span *ngIf="myForm.controls.email.errors.required && myForm.controls.email.touched">
+                        plz fill email input
+                    </span>
+                    <span *ngIf="myForm.controls.email.errors.email && myForm.controls.email.touched">
+                        enter a valid email
+                    </span>
+                </p>
+            </div>
+            <div class="form-group text-center">
+                <input type="button" class="btn btnSubmit" value="update" (click)="updateMyProfile()" (click)="modal.close('Save click')" />
+            </div>
+        </div>
+    </form>
+</ng-template>
 
 
 
@@ -219,3 +198,6 @@
     </form>
   
   </ng-template>
+
+  <app-footer></app-footer>
+
