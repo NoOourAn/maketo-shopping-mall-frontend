@@ -12,20 +12,20 @@ export class ProductsService {
 
   constructor(private myClient:HttpClient) { }
 
-  //// AWS config
-  // Enter copied or downloaded access ID and secret key here
-  ID = 'AKIAW5Z2PRQ7XIMUVW52';
-  SECRET = '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';
-  params
+  // //// AWS config
+  // // Enter copied or downloaded access ID and secret key here
+  // ID = 'xxxxxxxxx';
+  // SECRET = 'xxxxxxx';
+  // params
 
-  // The name of the bucket that you have created
-  BUCKET_NAME = 'marketo-e-commerce';
+  // // The name of the bucket that you have created
+  // BUCKET_NAME = 'xxxxxxxx';
 
-  // initialize the S3 interface
-  s3 = new S3({
-      accessKeyId: this.ID,
-      secretAccessKey: this.SECRET
-  });
+  // // initialize the S3 interface
+  // s3 = new S3({
+  //     accessKeyId: this.ID,
+  //     secretAccessKey: this.SECRET
+  // });
 
   private GetProducts:string = `${environment.api}/api/products/`;
   private GetCategories:string = `${environment.api}/api/products/getCategory`;
@@ -122,23 +122,23 @@ export class ProductsService {
     formData.append('price',product.price);
     formData.append('description',product.desc);
 
-    ///////////////
-    /// AWS usage
-    // Setting up S3 upload parameters
-    this.params = {
-        Bucket: this.BUCKET_NAME,
-        Key: "test.jpg", // File name you want to save as in S3
-        Body: image,
-        // ContentType: req.file.mimetype
-    };
+    // ///////////////
+    // /// AWS usage
+    // // Setting up S3 upload parameters
+    // this.params = {
+    //     Bucket: this.BUCKET_NAME,
+    //     Key: "test.jpg", // File name you want to save as in S3
+    //     Body: image,
+    //     // ContentType: req.file.mimetype
+    // };
 
-    // Uploading files to the bucket
-    this.s3.upload(this.params , function(err, data) {
-        if (err) {
-            throw err;
-        }
-        console.log(`File uploaded successfully. ${data.Location}`);
-    });
+    // // Uploading files to the bucket
+    // this.s3.upload(this.params , function(err, data) {
+    //     if (err) {
+    //         throw err;
+    //     }
+    //     console.log(`File uploaded successfully. ${data.Location}`);
+    // });
 
     return this.myClient.post(this.AddProduct,formData);
   }
