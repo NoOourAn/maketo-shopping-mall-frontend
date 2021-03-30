@@ -1,5 +1,4 @@
 input:not([type=radio]){
-    width: calc(100% - 57px);
     height: 42px;
     padding-left: 10px; 
     border-radius: 5px;
