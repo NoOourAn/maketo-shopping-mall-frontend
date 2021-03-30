@@ -1,10 +1,6 @@
 <!-- Default form subscription -->
 <app-header></app-header>
-<br>
-<br>
-<br>
-<br>
-<div class="container ">
+<div class="container mt-5">
     <div class="row g-0">
         <div class="col-md-6">
             <form class="text-center p-5" [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -15,7 +11,7 @@
                     {{ errorMsg }}
                 </div>
     
-                <input matInput type="text" placeholder="username" class="form-control mb-4" formControlName="username" required>
+                <input matInput type="text" placeholder="username" class="form-control mb-4" formControlName="username" required autofocus>
                 <p *ngIf="isFieldInvalid('username')">
                     Please inform your username
     

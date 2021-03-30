@@ -1,104 +1,87 @@
 <app-header></app-header>
 
-<form [formGroup]="userForm" (ngSubmit)="submit()" class="text-center border border-light p-5" enctype="multipart/form-data">
+<div class="container mt-5">
+    <div class="row g-0">
 
-    <div class="container register-form">
-        <div class="form">
-            <div class="note">
-                <p>Registeration Form</p>
-            </div>
-            <div class="form-content p-5">
-                <div class="form-row">
-
-
-                    <div class="col-md-6">
-                        <div class="imgBlock">
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 text-center">
-                        <div class="formBlock py-5">
-                            
-                            <div *ngIf="errorMsg" class="alert alert-danger text-center">
-                                {{ errorMsg }}
-                            </div>
-                            
-                            <div *ngIf="successMsg" class="alert alert-success text-center">
-                            {{ successMsg }}
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="defaultRegisterFormUserName" placeholder="user name *" formControlName="username" value="" required/>
-                            <p *ngIf="userForm.controls.username.errors&&userForm.controls.username.touched" class="alert alert-danger">
-                                <span *ngIf="userForm.controls.username.errors.required">
-                                    please  fill username
-                                </span>
-                                <span *ngIf="userForm.controls.username.errors.maxlength|| userForm.controls.username.errors.minlength">
-                                length must be 3:30 character
-                                </span>
-                                <span *ngIf="userForm.controls.username.errors.pattern">
-                                    name must be string or number
-                                </span>
-                            </p>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="E-mail" id="defaultRegisterFormLastName" formControlName="email" value="" required/>
-                            <p *ngIf="userForm.controls.email.errors&&userForm.controls.email.touched" class="alert alert-danger">
-                                <span *ngIf="userForm.controls.email.errors.required">
-                                    please  fill E-mail
-                                </span>
-                                <span *ngIf="userForm.controls.email.errors.email">
-                                    please  Enter valid E-mail
-                                </span>
-                            </p>
-                        </div>
-                        
-                        
-                        <div class="form-group">
-                            <input (change)="fileChange($event)" formControlName="image" type="file" class="form-control" id="customFile" required />
-                            <p *ngIf="userForm.controls.image.errors&&userForm.controls.image.touched" class="alert alert-danger">
-                                <span *ngIf="userForm.controls.image.errors.required">
-                                    *this field is required
-                                </span>
-                            </p>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="password" class="form-control" formControlName="password" id="defaultRegisterFormPassword" placeholder="Your Password *" value="" required />
-                            <p *ngIf="userForm.controls.password.errors&&userForm.controls.password.touched" class="alert alert-danger">
-
-                                <span *ngIf="userForm.controls.password.errors.required">
-                                    please  fill password
-                                </span>
-                                <span *ngIf="userForm.controls.password.errors.minlength">
-                                    length must be greater than 7 character
-                                </span>
-                            </p>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="radio" id="male" name="gender" value="male" formControlName="gender">
-                            <label for="male">Male</label>
-                            <input type="radio" id="female" name="gender" value="female" formControlName="gender">
-                            <label for="female">Female</label>
-
-                            <p *ngIf="userForm.controls.gender.errors&&userForm.controls.gender.touched" class="alert alert-danger">
-                                <span *ngIf="userForm.controls.gender.errors.required">
-                                    please Choose gender
-                                </span>
-                            </p>
-                        </div>
-                        <button type="button" (click)="submit();" class="btnSubmit">Submit</button>
-                        </div>                   
-                    </div>
-
-                </div>
+        <div class="col-md-6">
+            <div class="imgBlock">
+    
             </div>
         </div>
-    </div>
+
+        <div class="col-md-6">
+            <form class="text-center p-5" [formGroup]="userForm" (ngSubmit)="submit()" enctype="multipart/form-data">
     
-</form>
+                <p class="h4 mb-4">Registeration</p>
+    
+                <div *ngIf="errorMsg" class="alert alert-danger text-center">
+                    {{ errorMsg }}
+                </div>
+                <div *ngIf="successMsg" class="alert alert-success text-center">
+                    {{ successMsg }}
+                </div>
+
+                <input type="text" class="form-control mb-4" id="defaultRegisterFormUserName" placeholder="user name *" formControlName="username" value="" required autofocus/>
+                    <p *ngIf="userForm.controls.username.errors&&userForm.controls.username.touched" class="alert alert-danger">
+                        <span *ngIf="userForm.controls.username.errors.required">
+                            please  fill username
+                        </span>
+                        <span *ngIf="userForm.controls.username.errors.maxlength|| userForm.controls.username.errors.minlength">
+                        length must be 3:30 character
+                        </span>
+                        <span *ngIf="userForm.controls.username.errors.pattern">
+                            name must be string or number
+                        </span>
+                    </p>
+
+                <input type="email" class="form-control mb-4" placeholder="E-mail" id="defaultRegisterFormLastName" formControlName="email" value="" required/>
+                    <p *ngIf="userForm.controls.email.errors&&userForm.controls.email.touched" class="alert alert-danger">
+                        <span *ngIf="userForm.controls.email.errors.required">
+                            please  fill E-mail
+                        </span>
+                        <span *ngIf="userForm.controls.email.errors.email">
+                            please  Enter valid E-mail
+                        </span>
+                    </p>
+
+                <input (change)="fileChange($event)" formControlName="image" type="file" class="form-control mb-4" id="customFile" required />
+                    <p *ngIf="userForm.controls.image.errors&&userForm.controls.image.touched" class="alert alert-danger">
+                        <span *ngIf="userForm.controls.image.errors.required">
+                            *this field is required
+                        </span>
+                    </p>
+                
+                <input type="password" class="form-control mb-4" formControlName="password" id="defaultRegisterFormPassword" placeholder="Your Password *" value="" required />
+                    <p *ngIf="userForm.controls.password.errors&&userForm.controls.password.touched" class="alert alert-danger">
+
+                        <span *ngIf="userForm.controls.password.errors.required">
+                            please  fill password
+                        </span>
+                        <span *ngIf="userForm.controls.password.errors.minlength">
+                            length must be greater than 7 character
+                        </span>
+                    </p>
+
+                <input type="radio" id="male" name="gender" value="male" formControlName="gender">
+                    <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" formControlName="gender">
+                    <label for="female">Female</label>
+
+                <p *ngIf="userForm.controls.gender.errors&&userForm.controls.gender.touched" class="alert alert-danger">
+                    <span *ngIf="userForm.controls.gender.errors.required">
+                        please Choose gender
+                    </span>
+                </p>
+                <!-- Sign in button -->
+                <button mdbbtn class="bg-info" class="btnSubmit" (click)="onSubmit();" type="submit">Sign in</button>
+            </form>
+            <!-- Default form subscription -->
+        </div>
+        
+    </div>
+</div>
+
+
+
 
 <app-footer></app-footer>
