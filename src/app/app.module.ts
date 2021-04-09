@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProductsService } from './services/products.service';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule ,HttpClient} from "@angular/common/http";
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ProductsComponent } from './components/products/products.component';
 import { RegistrationComponent } from './components/shared/header/registration/registration.component';
@@ -39,6 +41,12 @@ import { SliderBriefComponent } from './components/home/1stsectionSlider/slider-
 import { ShoppingListComponent } from './components/home/2ndsectionShopping/shopping-list.component';
 import { BgReviewComponent } from './components/home/3rdsectionBackground/bg-review.component';
 import { RatingEventsComponent } from './components/home/4thsectionRatingEvents/rating-events.component';
+import { Injector } from '@angular/core';
+
+// AoT requires an exported function for factories
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/translation/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -75,8 +83,17 @@ import { RatingEventsComponent } from './components/home/4thsectionRatingEvents/
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbModule,
     MDBBootstrapModule.forRoot(),
-    NgbModule
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient],
+          
+      }
+    })
   ],
   providers: [
     ProductsService,
@@ -85,7 +102,7 @@ import { RatingEventsComponent } from './components/home/4thsectionRatingEvents/
     CartService,
     AdminService,
     LoginService,
-    OrdersService
+    OrdersService,
   ],
   bootstrap: [AppComponent]
 })

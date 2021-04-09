@@ -1,6 +1,8 @@
-import { Component, OnDestroy, OnInit ,LOCALE_ID, Inject} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Location, PopStateEvent } from "@angular/common";
+import {TranslateService} from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,8 +16,12 @@ export class AppComponent  {
   constructor(
       private router: Router, 
       private location: Location,
-      @Inject(LOCALE_ID) protected localeId: string
-    ) { }
+      translate: TranslateService
+    )
+    { 
+        // this language will be used as a fallback when a translation isn't found in the current language
+        translate.setDefaultLang('en');
+    }
 
   ngOnInit() {
       this.location.subscribe((ev:PopStateEvent) => {
@@ -34,5 +40,6 @@ export class AppComponent  {
           }
       });
   }
-  }
+  
+}
   

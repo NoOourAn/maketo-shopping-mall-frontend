@@ -1,8 +1,9 @@
-import { Component, OnInit ,LOCALE_ID, Inject} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { CartService } from '../../../services/cart.service';
 import { LoginService } from '../../../services/login.service';
 import { JwtService } from '../../../services/jwt.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +12,19 @@ import { JwtService } from '../../../services/jwt.service';
 })
 export class HeaderComponent implements OnInit {
 
-    noOfcartItem
+  
+  noOfcartItem
   constructor(
     private route:Router,private CartService:CartService,
     public loginService: LoginService,
     private JwtService:JwtService,
-    @Inject(LOCALE_ID) protected localeId: string
-  ){} 
-  
+    private translate: TranslateService
+    ){} 
+    
+    useLanguage(language: string): void {
+      this.translate.use(language);
+    }
+
   	search(){
 		this.route.navigate(['/search']); 
   }
@@ -67,10 +73,6 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  languageList = [
-    { code: 'en', label: 'English' },
-    { code: 'ar', label: 'Arabic' },
-  ];
 
 }
 

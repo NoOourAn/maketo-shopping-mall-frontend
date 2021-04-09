@@ -3,7 +3,7 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-        <a class="navbar-brand" href="#!" style="font-weight: 500;" translate="no">
+        <a class="navbar-brand" href="#!" style="font-weight: 500;">
             MarKeto
         </a>
     </mdb-navbar-brand>
@@ -14,18 +14,18 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a i18n="@@home" class="nav-link waves-light" aria-current="page" (click)="home();" routerLink="/home" mdbWavesEffect>Home</a>
+            <a class="nav-link waves-light" aria-current="page" (click)="home();" routerLink="/home" mdbWavesEffect>{{ 'header.home' | translate }}</a>
         </li>
         <li class="nav-item">
-            <a i18n="@@aboutus" class="nav-link waves-light" aria-current="page" (click)="aboutus();" routerLink="/aboutus" mdbWavesEffect>About Us</a>
+            <a class="nav-link waves-light" aria-current="page" (click)="aboutus();" routerLink="/aboutus" mdbWavesEffect>{{ 'header.about' | translate }}</a>
         </li>
         
         <li class="nav-item">
-            <a i18n="@@products" class="nav-link waves-light" aria-current="page" (click)="products();" routerLink="/products" mdbWavesEffect>Products</a>
+            <a class="nav-link waves-light" aria-current="page" (click)="products();" routerLink="/products" mdbWavesEffect>{{ 'header.products' | translate }}</a>
         </li>
 
         <li class="nav-item">
-            <!-- <a i18n="@@blog" class="nav-link waves-light" (click)="blog();" routerLink="/blog" mdbWavesEffect>Blog</a> -->
+            <!-- <a class="nav-link waves-light" (click)="blog();" routerLink="/blog" mdbWavesEffect>Blog</a> -->
         </li>
       </ul>
       <!-- Links -->
@@ -40,9 +40,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-                              <div *ngFor="let language of languageList">
-                                  <a href="/{{language.code}}" class="dropdown-item">{{language.label}}</a>
-                              </div>
+                            <a (click)="useLanguage('en')" class="dropdown-item">English</a>
+                            <a (click)="useLanguage('ar')" class="dropdown-item">Arabic</a>
                         </div>
                     </div>
                 </a>
@@ -62,10 +61,10 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-                            <a i18n="@@login" class="dropdown-item" *ngIf="!isLogin()" (click)="login();" routerLink="/login">Sign in</a>
-                            <a i18n="@@register" class="dropdown-item" *ngIf="!isLogin()" (click)="register()" routerLink="/register">Register</a>
-                            <a i18n="@@profile" class="dropdown-item" *ngIf="isLogin()" routerLink="/profile">profile</a>
-                            <a i18n="@@logout" class="dropdown-item" *ngIf="isLogin()" (click)="logout(); " routerLink="/logout ">logout</a>
+                            <a class="dropdown-item" *ngIf="!isLogin()" (click)="login();" routerLink="/login">{{ 'header.login' | translate }}</a>
+                            <a class="dropdown-item" *ngIf="!isLogin()" (click)="register()" routerLink="/register">{{ 'header.register' | translate }}</a>
+                            <a class="dropdown-item" *ngIf="isLogin()" routerLink="/profile">{{ 'header.profile' | translate }}</a>
+                            <a class="dropdown-item" *ngIf="isLogin()" (click)="logout(); " routerLink="/logout ">{{ 'header.logout' | translate }}</a>
                            
                         </div>
                     </div>

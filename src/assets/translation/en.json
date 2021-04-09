@@ -1,0 +1,23 @@
+{
+    "header": {
+        "home": "Home",
+        "about": "About Us",
+        "products": "Products",
+        "login":"Sign In",
+        "register":"Register",
+        "profile":"Profile",
+        "logout":"Logout"
+    },
+    "footer": {
+        "headline": "About Marketo",
+        "desc": "All You Need and More in Just One Place...",
+        "account": "My Account",
+        "orders":"Orders",
+        "wishlist":"Wish List",
+        "info":"Information",
+        "brands":"Brands",
+        "online":"Online",
+        "rights":"© 2021 monar All Rights Reserved. Powered by BigCommerce"
+    }
+    
+}
