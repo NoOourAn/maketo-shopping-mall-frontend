@@ -8,7 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod --aot"
+    "heroku-postbuild": "ng build-locale --prod --aot",
+    "build-locale:en": "ng build --prod --i18n-locale en --i18n-file src/locale/messages.en.xlf --output-path=dist/en --baseHref /en",
+    "build-locale:ar": "ng build --prod --i18n-locale ar --i18n-file src/locale/messages.ar.xlf --output-path=dist/ar --baseHref /ar"
+
   },
   "private": true,
   "dependencies": {

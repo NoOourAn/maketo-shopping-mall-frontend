@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit ,LOCALE_ID, Inject} from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Location, PopStateEvent } from "@angular/common";
 @Component({
@@ -11,7 +11,11 @@ export class AppComponent  {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor(private router: Router, private location: Location) { }
+  constructor(
+      private router: Router, 
+      private location: Location,
+      @Inject(LOCALE_ID) protected localeId: string
+    ) { }
 
   ngOnInit() {
       this.location.subscribe((ev:PopStateEvent) => {

@@ -3,7 +3,7 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand>
-        <a class="navbar-brand" href="#!" style="font-weight: 500;">
+        <a class="navbar-brand" href="#!" style="font-weight: 500;" translate="no">
             MarKeto
         </a>
     </mdb-navbar-brand>
@@ -14,23 +14,39 @@
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link waves-light" aria-current="page" (click)="home();" routerLink="/home" mdbWavesEffect>Home</a>
+            <a i18n="@@home" class="nav-link waves-light" aria-current="page" (click)="home();" routerLink="/home" mdbWavesEffect>Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-light" aria-current="page" (click)="aboutus();" routerLink="/aboutus" mdbWavesEffect>About Us</a>
+            <a i18n="@@aboutus" class="nav-link waves-light" aria-current="page" (click)="aboutus();" routerLink="/aboutus" mdbWavesEffect>About Us</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link waves-light" aria-current="page" (click)="products();" routerLink="/products" mdbWavesEffect>Products</a>
+            <a i18n="@@products" class="nav-link waves-light" aria-current="page" (click)="products();" routerLink="/products" mdbWavesEffect>Products</a>
         </li>
 
         <li class="nav-item">
-            <!-- <a class="nav-link waves-light" (click)="blog();" routerLink="/blog" mdbWavesEffect>Blog</a> -->
+            <!-- <a i18n="@@blog" class="nav-link waves-light" (click)="blog();" routerLink="/blog" mdbWavesEffect>Blog</a> -->
         </li>
       </ul>
       <!-- Links -->
   
       <ul class="navbar-nav ml-auto nav-flex-icons">
+
+            <li class="nav-item">
+                <a class="nav-link">
+                    <div class="btn-group" mdbDropdown>
+                        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                            <mdb-icon fas icon="globe"></mdb-icon><span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                              <div *ngFor="let language of languageList">
+                                  <a href="/{{language.code}}" class="dropdown-item">{{language.label}}</a>
+                              </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link mt-2" routerlink="/search" (click)="search();">
@@ -46,10 +62,10 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-                            <a class="dropdown-item" *ngIf="!isLogin()" (click)="login();" routerLink="/login">sign in</a>
-                            <a class="dropdown-item" *ngIf="!isLogin()" (click)="register()" routerLink="/register">Register</a>
-                            <a class="dropdown-item" *ngIf="isLogin()" routerLink="/profile">profile</a>
-                            <a class="dropdown-item" *ngIf="isLogin()" (click)="logout(); " routerLink="/logout ">logout</a>
+                            <a i18n="@@login" class="dropdown-item" *ngIf="!isLogin()" (click)="login();" routerLink="/login">Sign in</a>
+                            <a i18n="@@register" class="dropdown-item" *ngIf="!isLogin()" (click)="register()" routerLink="/register">Register</a>
+                            <a i18n="@@profile" class="dropdown-item" *ngIf="isLogin()" routerLink="/profile">profile</a>
+                            <a i18n="@@logout" class="dropdown-item" *ngIf="isLogin()" (click)="logout(); " routerLink="/logout ">logout</a>
                            
                         </div>
                     </div>

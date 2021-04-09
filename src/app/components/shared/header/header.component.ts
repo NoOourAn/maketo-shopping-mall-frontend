@@ -60,7 +60,12 @@ export class HeaderComponent implements OnInit {
       this.noOfcartItem=res;
       console.log("from cart",res);
     })
-    }
+  }
+
+  languageList = [
+    { code: 'en', label: 'English' },
+    { code: 'ar', label: 'Arabic' },
+  ];
 
 }
 
