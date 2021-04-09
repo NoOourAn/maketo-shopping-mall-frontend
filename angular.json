@@ -7,6 +7,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "frontend": {
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "ar": {
+            "translation": "src/locale/messages.ar.xlf"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -47,6 +55,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "localize": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -95,17 +104,8 @@
                 }
               ]
             },
-            "en": {      
-              "aot": true,      
-              "i18nFile": "src/locale/messages.en.xlf",      
-              "i18nLocale": "en",      
-              "i18nMissingTranslation": "error"    
-            },
-            "ar": {      
-              "aot": true,      
-              "i18nFile": "src/locale/messages.ar.xlf",      
-              "i18nLocale": "ar",      
-              "i18nMissingTranslation": "error"   
+            "ar": {
+              "localize": ["ar"]
             }
           }
         },
@@ -117,9 +117,6 @@
           "configurations": {
             "production": {
               "browserTarget": "frontend:build:production"
-            },
-            "en": {      
-              "browserTarget": "frontend:build:en"    
             },
             "ar": {      
               "browserTarget": "frontend:build:ar"    

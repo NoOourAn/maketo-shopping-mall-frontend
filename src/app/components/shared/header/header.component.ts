@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,LOCALE_ID, Inject} from '@angular/core';
 import {Router} from '@angular/router';
 import { CartService } from '../../../services/cart.service';
 import { LoginService } from '../../../services/login.service';
@@ -12,7 +12,12 @@ import { JwtService } from '../../../services/jwt.service';
 export class HeaderComponent implements OnInit {
 
     noOfcartItem
-  constructor(private route:Router,private CartService:CartService,public loginService: LoginService,private JwtService:JwtService){} 
+  constructor(
+    private route:Router,private CartService:CartService,
+    public loginService: LoginService,
+    private JwtService:JwtService,
+    @Inject(LOCALE_ID) protected localeId: string
+  ){} 
   
   	search(){
 		this.route.navigate(['/search']); 
